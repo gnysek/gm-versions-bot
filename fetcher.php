@@ -32,8 +32,12 @@ foreach ($rss as $name => $url) {
 		$data = json_decode($json, TRUE);
 
 		if (!empty($data['channel']['item'])) {
-			$i1 = $data['channel']['item'][0];
-			$i2 = end($data['channel']['item']);
+            if (empty($data['channel']['item']['title'])) {
+			    $i1 = $data['channel']['item'][0];
+			    $i2 = end($data['channel']['item']);
+            } else {
+                $i1 = $i2 = $data['channel']['item'];
+            }
 			
 			$info = (strtotime($i1['pubDate']) > strtotime($i2['pubDate'])) ? $i1 : $i2;
 
