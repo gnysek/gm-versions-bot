@@ -55,16 +55,22 @@ else:
 	<br/>
 				<?php include('cfg.php'); ?>
 	<a class="btn btn-small" href="<?php echo URL; ?>version/gm4win">GM:Standard 8.1</a> -
-    <?php echo get_version('gm4win', $data); ?><br/><br/>
+    <?php echo get_version('gm4win', $data); ?>
+	<a class="btn btn-info" href="http://store.yoyogames.com/downloads/gm4win/release-notes.html">Release Notes</a>
+	<br/><br/>
     <?php /*
 				<a href="<?php echo URL; ?>version/gm4mac">Mac</a> - <?php echo get_version('gm4mac', $data); ?><br/><br/>
 				<a href="<?php echo URL; ?>version/gm4html5">HTML5</a> - <?php echo get_version('gm4html5', $data); ?><br/><br/>
 				*/ ?>
 	<a class="btn btn-small" href="<?php echo URL; ?>version/gmstudio">GM:Studio</a> -
-    <?php echo get_version('gmstudio', $data); ?><br/><br/>
+    <?php echo get_version('gmstudio', $data); ?>
+	<a class="btn btn-info" href="http://store.yoyogames.com/downloads/gm-studio/release-notes-studio.html">Release Notes</a>
+	<br/><br/>
 
-	<a class="btn btn-small" href="<?php echo URL; ?>version/gmstudioea">GM:Studio</a> -
-	<?php echo get_version('gmstudioea', $data); ?><br/><br/>
+	<a class="btn btn-small" href="<?php echo URL; ?>version/gmstudioea">GM:Studio 1.3 EAP</a> -
+	<?php echo get_version('gmstudioea', $data); ?>
+	<a class="btn btn-info" href="http://store.yoyogames.com/downloads/gm-studio-ea/release-notes-studio.html">Release Notes</a>
+	<br/><br/>
 
 	<a class="btn btn-small" href="<?php echo URL; ?>version/all">All versions at once</a><br/><br/>
 	<hr/>
