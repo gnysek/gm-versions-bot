@@ -11,11 +11,11 @@ require_once dirname(__FILE__) . '/OAuth.php';
  * @license    New BSD License
  * @link       http://phpfashion.com/
  * @see        http://dev.twitter.com/doc
- * @version    3.0
+ * @version    3.2
  */
 class Twitter
 {
-	const API_URL = 'http://api.twitter.com/1.1/';
+	const API_URL = 'https://api.twitter.com/1.1/';
 
 	/**#@+ Timeline {@link Twitter::load()} */
 	const ME = 1;
@@ -69,7 +69,6 @@ class Twitter
 	}
 
 
-
 	/**
 	 * Tests if user credentials are valid.
 	 * @return boolean
@@ -90,7 +89,6 @@ class Twitter
 	}
 
 
-
 	/**
 	 * Sends message to the Twitter.
 	 * @param string   message encoded in UTF-8
@@ -101,7 +99,6 @@ class Twitter
 	{
 		return $this->request('statuses/update', 'POST', array('status' => $message));
 	}
-
 
 
 	/**
@@ -120,11 +117,10 @@ class Twitter
 		}
 
 		return $this->cachedRequest('statuses/' . $timelines[$flags & 3], (array) $data + array(
-			'count' => $count,
-			'include_rts' => $flags & self::RETWEETS ? 1 : 0,
-		));
+				'count' => $count,
+				'include_rts' => $flags & self::RETWEETS ? 1 : 0,
+			));
 	}
-
 
 
 	/**
@@ -139,6 +135,29 @@ class Twitter
 	}
 
 
+	/**
+	 * Returns information of a given user by id.
+	 * @param  string name
+	 * @return mixed
+	 * @throws TwitterException
+	 */
+	public function loadUserInfoById($id)
+	{
+		return $this->cachedRequest('users/show', array('user_id' => $id));
+	}
+
+
+	/**
+	 * Returns followers of a given user.
+	 * @param  string name
+	 * @return mixed
+	 * @throws TwitterException
+	 */
+	public function loadUserFollowers($user, $count = 5000, $cursor = -1, $cacheExpiry = null)
+	{
+		return $this->cachedRequest('followers/ids', array('screen_name' => $user, 'count' => $count, 'cursor' => $cursor), $cacheExpiry);
+	}
+
 
 	/**
 	 * Destroys status.
@@ -148,10 +167,9 @@ class Twitter
 	 */
 	public function destroy($id)
 	{
-		$res = $this->request("statuses/destroy/$id", 'GET');
+		$res = $this->request("statuses/destroy/$id", 'POST');
 		return $res->id ? $res->id : FALSE;
 	}
-
 
 
 	/**
@@ -164,7 +182,6 @@ class Twitter
 	{
 		return $this->request('search/tweets', 'GET', is_array($query) ? $query : array('q' => $query))->statuses;
 	}
-
 
 
 	/**
@@ -192,15 +209,15 @@ class Twitter
 		$request->sign_request($this->signatureMethod, $this->consumer, $this->token);
 
 		$options = array(
-			CURLOPT_HEADER => FALSE,
-			CURLOPT_RETURNTRANSFER => TRUE,
-		) + ($method === 'POST' ? array(
-			CURLOPT_POST => TRUE,
-			CURLOPT_POSTFIELDS => $request->to_postdata(),
-			CURLOPT_URL => $request->get_normalized_http_url(),
-		) : array(
-			CURLOPT_URL => $request->to_url(),
-		)) + $this->httpOptions;
+				CURLOPT_HEADER => FALSE,
+				CURLOPT_RETURNTRANSFER => TRUE,
+			) + ($method === 'POST' ? array(
+				CURLOPT_POST => TRUE,
+				CURLOPT_POSTFIELDS => $request->to_postdata(),
+				CURLOPT_URL => $request->get_normalized_http_url(),
+			) : array(
+				CURLOPT_URL => $request->to_url(),
+			)) + $this->httpOptions;
 
 		$curl = curl_init();
 		curl_setopt_array($curl, $options);
@@ -223,7 +240,6 @@ class Twitter
 
 		return $payload;
 	}
-
 
 
 	/**
@@ -262,7 +278,6 @@ class Twitter
 	}
 
 
-
 	/**
 	 * Makes twitter links, @usernames and #hashtags clickable.
 	 * @param  stdClass|string status
@@ -293,6 +308,11 @@ class Twitter
 		foreach ($status->entities->user_mentions as $item) {
 			$all[$item->indices[0]] = array("http://twitter.com/$item->screen_name", "@$item->screen_name", $item->indices[1]);
 		}
+		if (isset($status->entities->media)) {
+			foreach ($status->entities->media as $item) {
+				$all[$item->indices[0]] = array($item->url, $item->display_url, $item->indices[1]);
+			}
+		}
 
 		krsort($all);
 		$s = $status->text;
@@ -303,7 +323,6 @@ class Twitter
 		}
 		return $s;
 	}
-
 
 
 	private static function clickableCallback($m)

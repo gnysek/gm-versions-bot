@@ -103,7 +103,12 @@ if (!$errors) {
 			if (empty($twitter)) {
 				$twitter = new Twitter($CFG['consumerKey'], $CFG['consumerSecret'], $CFG['accessToken'], $CFG['accessTokenSecret']);
 			}
-			$twitter->send($names[$name] . ' v. ' . $final[ $name ]['version'] . ' is out! ' . $releaseNotes[$name] . ' #yoyogames');
+			try {
+				$twitter->send($names[$name] . ' v. ' . $final[ $name ]['version'] . ' is out! ' . $releaseNotes[$name] . ' #yoyogames');
+			} catch(Exception $e) {
+				echo $e->getMessage() . '<br/>';
+				file_put_contents('log.txt', $e->getMessage());
+			}
 			echo 'updated!<br/>';
 		}
 	}
