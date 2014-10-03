@@ -5,7 +5,8 @@ error_reporting(E_ALL);
 include('cfg.php');
 
 $rss = array(
-	'gmstudio' => 'http://store.yoyogames.com/downloads/gm-studio/update-studio.rss',
+	'gmstudio' => 'http://store.yoyogames.com/downloads/gm-studio/update-studio-stable.rss',
+	'gmstudiobeta' => 'http://store.yoyogames.com/downloads/gm-studio/update-studio.rss',
 	'gmstudioea' => 'http://store.yoyogames.com/downloads/gm-studio-ea/update-studio.rss',
 	'gm4win' => 'http://store.yoyogames.com/downloads/gm4win/update.rss',
 	#'gm4mac' => 'http://store.yoyogames.com/downloads/gm4mac/update.rss',
@@ -84,6 +85,7 @@ if (!$errors) {
 
 	$names = array(
 		'gmstudio' => '#GameMaker #Studio',
+        'gmstudiobeta' => '#GameMaker #Studio (beta)',
         'gmstudioea' => '#GameMaker #Studio #EAP',
 		/*
 		'gm4html5' => 'GameMaker:HTML5',
@@ -93,6 +95,7 @@ if (!$errors) {
 		);
 	$releaseNotes = array(
 		'gmstudio' => 'http://goo.gl/fElAF',
+		'gmstudiobeta' => 'http://goo.gl/fElAF',
         'gmstudioea' => 'http://goo.gl/9Mong3',
 		'gm4win' => '',
 	);
