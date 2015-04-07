@@ -23,3 +23,11 @@ class version
 		include('fetcher/design/version.php');
 	}
 }
+
+class release
+{
+	public function GET($version)
+	{
+		include('fetcher/design/release.php');
+	}
+}

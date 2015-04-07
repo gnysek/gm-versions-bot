@@ -10,6 +10,7 @@ $urls = array(
 	'/' => 'index',
 	'/api' => 'api',
 	'/version/([a-z4]+)' => 'version',
+	'/release/([a-z4]+)' => 'release',
 );
 
 

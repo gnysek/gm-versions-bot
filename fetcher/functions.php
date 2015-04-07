@@ -5,8 +5,17 @@ function get_version($name, $data)
     if (empty($data[$name]['version'])) {
         return 'N/A';
     } else {
-        return 'current v. <b>' . $data[$name]['version'] . '</b>, released ' . days_ago($data[$name]['daysAgo']);
+        return 'Current version is <b>' . $data[$name]['version'] . '</b>, released ' . days_ago($data[$name]['daysAgo']);
     }
+}
+
+function get_download($name, $gmapi, $data)
+{
+	if (empty($gmapi[$name]['download'])) {
+		return '';
+	} else {
+		return '<a class="btn btn-danger" href="' . sprintf($gmapi[$name]['download'], $data[$name]['version']) . '">Download v' . $data[$name]['version'] . ' directly</a>';
+	}
 }
 
 function days_ago($time)

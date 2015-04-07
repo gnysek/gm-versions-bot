@@ -11,24 +11,28 @@ $gmapis = array(
 		'name' => 'GM:Studio 1.x',
 		'notes' => 'http://store.yoyogames.com/downloads/gm-studio/release-notes-studio.html',
 		'rss' => 'http://store.yoyogames.com/downloads/gm-studio/update-studio-stable.rss',
+		'download' => 'http://store.yoyogames.com/downloads/gm-studio/GMStudio-Installer-%s.exe',
 		'enabled' => true,
 	),
 	'gmstudiobeta' => array(
 		'name' => 'GM:Studio 1.x Beta',
 		'notes' => 'http://store.yoyogames.com/downloads/gm-studio/release-notes-studio.html',
 		'rss' => 'http://store.yoyogames.com/downloads/gm-studio/update-studio.rss',
+		'download' => 'http://store.yoyogames.com/downloads/gm-studio/GMStudio-Installer-%s.exe',
 		'enabled' => true,
 	),
 	'gmstudioea' => array(
 		'name' => 'GM:Studio 1.x EAP',
 		'notes' => 'http://store.yoyogames.com/downloads/gm-studio-ea/release-notes-studio.html',
 		'rss' => 'http://store.yoyogames.com/downloads/gm-studio-ea/update-studio.rss',
+		'download' => 'http://store.yoyogames.com/downloads/gm-studio-ea/GMStudio-Installer-%s.exe',
 		'enabled' => true,
 	),
 	'gm4win' => array(
 		'name' => 'GM 8.x',
 		'notes' => 'http://store.yoyogames.com/downloads/gm4win/release-notes.html',
 		'rss' => 'http://store.yoyogames.com/downloads/gm4win/update.rss',
+		'download' => 'http://store.yoyogames.com/downloads/gm4win/GameMaker-Installer-%s.exe',
 		'enabled' => true,
 	),
 	'gm4mac' => array(
