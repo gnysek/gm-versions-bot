@@ -8,21 +8,21 @@ if (file_exists('result.tmp')) {
 
 $gmapis = array(
 	'gmstudio' => array(
-		'name' => 'GM:Studio 1.x',
+		'name' => 'GM:Studio 1.4.x Stable',
 		'notes' => 'http://store.yoyogames.com/downloads/gm-studio/release-notes-studio.html',
 		'rss' => 'http://store.yoyogames.com/downloads/gm-studio/update-studio-stable.rss',
 		'download' => 'http://store.yoyogames.com/downloads/gm-studio/GMStudio-Installer-%s.exe',
 		'enabled' => true,
 	),
 	'gmstudiobeta' => array(
-		'name' => 'GM:Studio 1.x Beta',
+		'name' => 'GM:Studio 1.4.x Beta',
 		'notes' => 'http://store.yoyogames.com/downloads/gm-studio/release-notes-studio.html',
 		'rss' => 'http://store.yoyogames.com/downloads/gm-studio/update-studio.rss',
 		'download' => 'http://store.yoyogames.com/downloads/gm-studio/GMStudio-Installer-%s.exe',
 		'enabled' => true,
 	),
 	'gmstudioea' => array(
-		'name' => 'GM:Studio 1.x EAP',
+		'name' => 'GM:Studio 1.4.x EAP',
 		'notes' => 'http://store.yoyogames.com/downloads/gm-studio-ea/release-notes-studio.html',
 		'rss' => 'http://store.yoyogames.com/downloads/gm-studio-ea/update-studio.rss',
 		'download' => 'http://store.yoyogames.com/downloads/gm-studio-ea/GMStudio-Installer-%s.exe',
