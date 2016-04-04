@@ -8,8 +8,8 @@
 
 <?php foreach ($gmapis as $name => $data): ?>
 	<h3>
-		<a class="btn" href="/release/<?php echo $name; ?>">Details</a>
-		<a href="/release/<?php echo $name; ?>"><?php echo $data['name']; ?></a>
+		<a href="<?php echo URL; ?>release/<?php echo $name; ?>"><?php echo $data['name']; ?></a>
+		<a class="btn btn-success" href="<?php echo URL; ?>release/<?php echo $name; ?>">Details <?php if (get_download($name, $gmapis, $resultFile, true)): ?>&amp; Download<?php endif; ?></a>
 	</h3>
 	<?php echo get_version($name, $resultFile); ?>
 <?php endforeach; ?>

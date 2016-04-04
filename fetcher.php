@@ -36,14 +36,14 @@ foreach ($rss as $name => $url) {
 	if (!empty($xml)) {
 		/* @var $xml SimpleXMLElement */
 		$json = json_encode($xml);
-		$data = json_decode($json, TRUE);
+		$old_data = json_decode($json, TRUE);
 
-		if (!empty($data['channel']['item'])) {
-			if (empty($data['channel']['item']['title'])) {
-				$i1 = $data['channel']['item'][0];
-				$i2 = end($data['channel']['item']);
+		if (!empty($old_data['channel']['item'])) {
+			if (empty($old_data['channel']['item']['title'])) {
+				$i1 = $old_data['channel']['item'][0];
+				$i2 = end($old_data['channel']['item']);
 			} else {
-				$i1 = $i2 = $data['channel']['item'];
+				$i1 = $i2 = $old_data['channel']['item'];
 			}
 
 			$info = (strtotime($i1['pubDate']) > strtotime($i2['pubDate'])) ? $i1 : $i2;
@@ -84,6 +84,7 @@ $old_versions = json_decode(file_get_contents(dirname(__FILE__) . '/result.tmp')
 
 if (!$errors) {
 
+	require dirname(__FILE__) . '/twitter/OAuth.php';
 	require dirname(__FILE__) . '/twitter/twitter.class.php';
 
 	$twitter = null;
@@ -105,23 +106,21 @@ if (!$errors) {
 		'gm4win' => '',
 	);
 
-	foreach ($old_versions as $name => $data) {
+	foreach ($old_versions as $name => $old_data) {
 
-		if (isset($old_versions[$name]['fetchedByApi'])) {
+		if (!empty($old_versions[$name]['fetchedByApi'])) {
 			$final[$name]['fetchedByApi'] = $old_versions[$name]['fetchedByApi'];
 		} else {
 			$final[$name]['fetchedByApi'] = $old_versions[$name]['releasedUT'];
 		}
 
-		$final[$name]['daysAgo'] = floor((time() - $final[$name]['fetchedByApi']) / 86400);
-
-		if ($final[$name]['version'] == $data['version']) {
-			echo $name . ': ' . $data['version'] . ' not changed ' . PHP_EOL;
+		if ($final[$name]['version'] == $old_data['version']) {
+			echo $name . ': ' . $old_data['version'] . ' not changed ' . PHP_EOL;
 		} else {
-			echo $name . ': ' . $data['version'] . ' -> ' . $final[$name]['version'] . PHP_EOL;
+			echo $name . ': ' . $old_data['version'] . ' -> ' . $final[$name]['version'] . PHP_EOL;
 		}
 
-		if (version_compare($data['version'], $final[$name]['version'], '<')) {
+		if (version_compare($old_data['version'], $final[$name]['version'], '<')) {
 			$final[$name]['fetchedByApi'] = time();
 			if (empty($twitter) and !empty($CFG)) {
 				$twitter = new Twitter($CFG['consumerKey'], $CFG['consumerSecret'], $CFG['accessToken'], $CFG['accessTokenSecret']);
@@ -136,9 +135,15 @@ if (!$errors) {
 		}
 	}
 
+	foreach($final as $name => $value) {
+		$final[$name]['daysAgo'] = floor((time() - $final[$name]['fetchedByApi']) / 86400);
+	}
+
 	if (php_sapi_name() == 'cli') {
+		echo 'Saved to file [CLI]' . PHP_EOL;
 		file_put_contents(dirname(__FILE__) . '/result.tmp', json_encode($final));
 	} else {
+		echo 'Saved to file [Browser]' . PHP_EOL;
 		file_put_contents('result.tmp', json_encode($final));
 	}
 
