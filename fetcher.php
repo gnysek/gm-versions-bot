@@ -136,7 +136,11 @@ if (!$errors) {
 	}
 
 	foreach($final as $name => $value) {
-		$final[$name]['daysAgo'] = floor((time() - $final[$name]['fetchedByApi']) / 86400);
+		$_date1 = new DateTime(date('Y-m-d', $final[$name]['fetchedByApi']));
+		$_date2 = new DateTime();
+		$dDiff = $_date1->diff($_date2);
+
+		$final[$name]['daysAgo'] = $dDiff->days;
 	}
 
 	if (php_sapi_name() == 'cli') {
