@@ -1,12 +1,12 @@
 <?php
 
-function get_version($name, $data)
+function get_version($name, $data, $addBr = true)
 {
-    if (empty($data[$name]['version'])) {
-        return 'N/A';
-    } else {
-        return 'Current version is <b>' . $data[$name]['version'] . '</b>, released ' . days_ago($data[$name]['daysAgo']);
-    }
+	if (empty($data[$name]['version'])) {
+		return 'N/A';
+	} else {
+		return 'Current version is <b>' . $data[$name]['version'] . '</b>.' . ($addBr ? '<br/>' : ' ') . 'Released ' . days_ago($data[$name]['daysAgo']);
+	}
 }
 
 function get_download($name, $gmapi, $data)
@@ -14,17 +14,18 @@ function get_download($name, $gmapi, $data)
 	if (empty($gmapi[$name]['download'])) {
 		return '';
 	} else {
-		return '<a class="btn btn-danger" href="' . sprintf($gmapi[$name]['download'], $data[$name]['version']) . '">Download v' . $data[$name]['version'] . ' directly</a>';
+		return '<a class="btn btn-danger" href="' . sprintf($gmapi[$name]['download'], $data[$name]['version']) . '">Download <em>' . $gmapi[$name]['name'] . '</em> - <small>v</small>' . $data[$name]['version'] . ' directly</a>';
 	}
 }
 
 function days_ago($time)
 {
+	$s = '';
     if ($time < 0) {
         return '- not yet ;)';
     }
     if ($time < 7) {
-        $s = '';
+
         if ($time == 0) {
             $s .= '<b>TODAY</b>';
         } else {
@@ -36,7 +37,28 @@ function days_ago($time)
         }
         return $s . ' <span class="badge badge-warning">NEW!</span>';
     }
-    return '<b>' . $time . '</b> days ago';
+
+	$d1 = new DateTime();
+	$d2 = new DateTime();
+	$d2->sub(new DateInterval(('P' . $time . 'D')));
+
+	$diff = $d1->diff($d2);
+
+	$addDaysInBracket = false;
+
+	if ($diff->y > 0) {
+		$s .= $diff->y . ' year' . ($diff->y > 1 ? 's' : '') . ', ';
+		$addDaysInBracket = true;
+	}
+
+	if ($diff->m > 0) {
+		$s .= $diff->m . ' month' . ($diff->m > 1 ? 's' : '') . ', ';
+		$addDaysInBracket = true;
+	}
+
+	$s .= $diff->d . ' day' . ($diff->d > 1 ? 's' : '') . '';
+
+	return '<b>' . $s . ' ago</b> ' . ($addDaysInBracket ? ('<sup>(' . $time . ' days)</sup>') : '');
 }
 
 /**

@@ -9,8 +9,8 @@ include_once('fetcher/functions.php');
 $urls = array(
 	'/' => 'index',
 	'/api' => 'api',
-	'/version/([a-z4]+)' => 'version',
-	'/release/([a-z4]+)' => 'release',
+	'/version/([a-z24]+)' => 'version',
+	'/release/([a-z24]+)' => 'release',
 );
 
 

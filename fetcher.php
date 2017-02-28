@@ -10,6 +10,8 @@ include_once('fetcher/gmapi-data.php');
 //}
 
 $rss = array(
+	'gm2ide' => 'http://gms.yoyogames.com/update-win.rss',
+	'gm2runtime' => 'http://gms.yoyogames.com/Zeus-Runtime.rss',
 	'gmstudio' => 'http://store.yoyogames.com/downloads/gm-studio/update-studio-stable.rss',
 	'gmstudiobeta' => 'http://store.yoyogames.com/downloads/gm-studio/update-studio.rss',
 	'gmstudioea' => 'http://store.yoyogames.com/downloads/gm-studio-ea/update-studio.rss',
@@ -17,6 +19,7 @@ $rss = array(
 	'gm4mac' => 'http://store.yoyogames.com/downloads/gm4mac/update.rss',
 	#'gm4html5' => 'http://store.yoyogames.com/downloads/gm4html5/update-html5.rss',
 );
+echo phpversion() . PHP_EOL;
 
 $final = array();
 
@@ -52,6 +55,7 @@ foreach ($rss as $name => $url) {
 				'version' => preg_replace('/[^\d\.]/i', '', $info['title']),
 				'released' => $info['pubDate'],
 				'releasedUT' => strtotime($info['pubDate']),
+				'fetchedByApi' => time(),
 			);
 			$final[$name]['daysAgo'] = ceil((time() - $final[$name]['releasedUT']) / 86400);
 		}
@@ -90,6 +94,8 @@ if (!$errors) {
 	$twitter = null;
 
 	$names = array(
+		'gm2ide' => '#GameMakerStudio2 IDE',
+		'gm2runtime' => '#GameMakerStudio2 Runtime',
 		'gmstudio' => '#GameMaker #Studio (stable)',
 		'gmstudiobeta' => '#GameMaker #Studio (beta)',
 		'gmstudioea' => '#GameMaker #Studio (EAP)',
@@ -100,6 +106,8 @@ if (!$errors) {
 		'gm4win' => 'GameMaker 8.1 Standard',
 	);
 	$releaseNotes = array(
+		'gm2ide' => 'http://gmapi.gnysek.pl/release/gm2ide',
+		'gm2runtime' => 'http://gmapi.gnysek.pl/release/gm2ide',
 		'gmstudio' => 'http://gmapi.gnysek.pl/release/gmstudio',
 		'gmstudiobeta' => 'http://gmapi.gnysek.pl/release/gmstudiobeta',
 		'gmstudioea' => 'http://gmapi.gnysek.pl/release/gmstudioea',
@@ -122,7 +130,7 @@ if (!$errors) {
 
 		if (version_compare($old_data['version'], $final[$name]['version'], '<')) {
 			$final[$name]['fetchedByApi'] = time();
-			if (empty($twitter) and !empty($CFG)) {
+			if (!empty($CFG)) {
 				$twitter = new Twitter($CFG['consumerKey'], $CFG['consumerSecret'], $CFG['accessToken'], $CFG['accessTokenSecret']);
 				try {
 					$twitter->send($names[$name] . ' v. ' . $final[$name]['version'] . ' is out! ' . $releaseNotes[$name] . ' #yoyogames');
