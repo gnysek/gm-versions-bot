@@ -1,0 +1,577 @@
+
+<html>
+<head>
+
+
+<script type="text/javascript" src="/static/js/analytics.js"></script>
+<script type="text/javascript">archive_analytics.values.server_name="wwwb-app0.us.archive.org";archive_analytics.values.server_ms=161;</script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+	<title>Game Maker 7.x for Mac release notes</title>
+	<style type="text/css">
+
+		body
+		{
+			background-color: white;
+		}
+		h1 {
+			background-color: #00737d;
+			color: #f0f0f0;
+			padding: 4px;
+			border-style:solid;
+			border-color:#000000;
+			border-width:1px;
+			box-shadow: 5px 5px 5px #00454a;
+			-moz-box-shadow: 5px 5px 5px #00454a;
+			-webkit-box-shadow: 5px 5px 5px #00454a;
+			zoom:1; /* This enables hasLayout, which is required for older IE browsers */
+			filter: progid:DXImageTransform.Microsoft.Shadow(color='#273b05', Direction=135, Strength=7);
+		}
+		ul {
+			list-style-type:square;
+			font-size: 13;
+		}
+	</style>
+	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+</head>
+<body>
+
+<h1 id="version-7.5.86">Version 7.5.86</h1>
+<p>Performance improvement! various drawing functions have been speeded up hugely. (all sprite and particle rendering)</p>
+<p>Many thanks to Tom at Moacube for working with me on getting the speed improvements in place and tested.</p>
+<h1 id="version-7.5.85">Version 7.5.85</h1>
+<p>Apologies for the bad update last night, this one should fix it, any problems let me know</p>
+<p>Log output to console has been silenced (still output to the log file); you can bring it back by setting the YYLOG_TRACE environment variable to anything, undefine it to remove it</p>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 892 - Games Crash every time after loading</li>
+</ul>
+<h1 id="version-7.5.84">Version 7.5.84</h1>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 878 - sound_global_volume does not work</li>
+	<li>Fixed bug 891 - io_handle() doesn't work</li>
+	<li>Fixed bug 888 - Importing Png files with shadows and setting transparency creates no transparency.</li>
+	<li>Fixed bug 883 - Abnormal Console Activity for sound_play</li>
+</ul>
+<h1 id="version-7.5.83">Version 7.5.83</h1>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 838 - Games are not Mac App Store compatible</li>
+</ul>
+<h1 id="version-7.5.82">Version 7.5.82</h1>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 835 - New updates cause GM to crash when opening some scripts</li>
+</ul>
+<h1 id="version-7.5.81">Version 7.5.81</h1>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 834 - Text Feature in Sprite Editor doesn't work</li>
+</ul>
+<h1 id="version-7.5.80">Version 7.5.80</h1>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 831 - string_width and string_height functions don't work in 7.5.79</li>
+</ul>
+<h1 id="version-7.5.79">Version 7.5.79</h1>
+<p>Fix directory where config items are saved in runner to comply with Mac App Store guidelines</p>
+<p>Added Game Maker News window</p>
+<p>Added Menu item to link to gm4mac.yoyogames.com when reporting a bug.</p>
+<p>When checking for a license added retries, should fix occasional license check failure</p>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 798 - Sounds tends to skip at times</li>
+	<li>Fixed bug 611 - MIDI crash</li>
+	<li>Fixed bug 622 - 3D does not work correctly</li>
+	<li>Fixed bug 630 - Keep resource windows above the main GM window</li>
+	<li>Fixed bug 731 - Other Users are always asked for License Key initially</li>
+	<li>Fixed bug 736 - execute_program() doesn't seem to wok in game executables</li>
+	<li>Fixed bug 732 - Incorrect version number when update is available</li>
+	<li>Fixed bug 778 - Sound is so messed up</li>
+	<li>Fixed bug 779 - Games crash when they end</li>
+	<li>Fixed bug 780 - 7.5.72 Update causes first key press issue/li>
+	<li>Fixed bug 777 - Debug Mode: message/instance/variable lists don't have scroll bars</li>
+	<li>Fixed bug 793 - Debug Mode: Show Local Variables can't handle object names</li>
+	<li>Fixed bug 809 - sprite_add_alpha function doesn't produce expected results</li>
+	<li>Fixed bug 824 - Display bug with show_message() and get_string()</li>
+	<li>Fixed bug 825 - get_string() and line endings</li>
+	<li>Fixed bug 664 - Sprites added with sprite_add_alpha don't draw correctly</li>
+	<li>Fixed bug 792 - keyboard_string contains line breaks</li>
+	<li>Fixed bug 789 - 'Unknown function or script' errors aren't reported correctly</li>
+	<li>Fixed bug 763 - YoYoGames Player Window caption while loading</li>
+	<li>Fixed bug 811 - .app files defaulting to HDD root as app directory</li>
+	<li>Fixed bug 782 - Code Editor: Backslashes mess up colouring</li>
+	<li>Fixed bug 818 - "Change" tile layer button does nothing</li>
+	<li>Fixed bug 739 - Image Editor: transparent pixels become green when image is closed</li>
+	<li>Fixed bug 826 - Time Line: Adding an actin via Drag and Drop results in 2 actions being created</li>
+	<li>Fixed bug 827 - Game Information: Game Information content from previous game will carry over into newly created games</li>
+</ul>
+<li>Fixed bug 784 - sound_fade() doesn't work</li>
+<h1 id="version-7.5.78">Version 7.5.78</h1>
+<p>Fix appstore permission issues when creating a game</p>
+<h1 id="version-7.5.77">Version 7.5.77</h1>
+<p>Fix shared framework so it works properly with Leopard</p>
+<h1 id="version-7.5.76">Version 7.5.76</h1>
+<p>Possibly fixed 797 - Major sound issues, seems to depend on hardware being used</p>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 796 - No animation</li>
+</ul>
+<h1 id="version-7.5.75">Version 7.5.75</h1>
+<p>Fix player for use in Mac App Store - removed usage of some private APIs from Free Pascal runtime and the SDL runtime.</p>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 784 - sound_fade() doesn't work</li>
+	<li>Fixed bug 794 - Room Editor: can't shift all instances upward</li>
+	<li>Fixed bug 787 - Wrong permissions on generated gm4mac apps</li>
+	<li>Fixed bug 790 - No 'Overwrite' warning on executables</li>
+	<li>Fixed bug 795 - .svn directories in application bundles</li>
+	<li>Fixed bug 785 - Delete ksyd don't delete resources</li>
+</ul>
+<h1 id="version-7.5.74">Version 7.5.74</h1>
+<p>Fix framework reference</p>
+<h1 id="version-7.5.73">Version 7.5.73</h1>
+<p>Audio update - create the NSSound on preload rather than on first play</p>
+<h1 id="version-7.5.72">Version 7.5.72</h1>
+<p>Removed SDL.framework and SDL_mixer.framework from Game_Maker.app, and removed SDL_mixer.framework from YoYo70.app, slims down the distribution considerably</p>
+<p>Fixed bug where Pro Game Maker was called Lite during update process</p>
+<h1 id="version-7.5.71">Version 7.5.71</h1>
+<p>This truly is the fix for bug 775</p>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 775 - crash on startup</li>
+</ul>
+<h1 id="version-7.5.70">Version 7.5.70</h1>
+<p>True fix for bug 775</p>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 775 - crash on startup</li>
+</ul>
+<h1 id="version-7.5.69">Version 7.5.69</h1>
+<p>Fix issue with crash on startup (framework cleanup was too aggressive)</p>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 775 - crash on startup</li>
+</ul>
+<h1 id="version-7.5.68">Version 7.5.68</h1>
+<p>Re-implemented the audio subsystem, now based on NSSound with improved Midi playback, should now be more resilient.
+	Please let us know of any issues</p>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 773 - Open webpage action does not do anything</li>
+</ul>
+<h1 id="version-7.5.67">Version 7.5.67</h1>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 758 - negative values in room editor</li>
+</ul>
+<h1 id="version-7.5.66">Version 7.5.66</h1>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 732 - Incorrect version number when update is available</li>
+	<li>Fixed bug 742 - Interpolate between pixel setting does not affect font</li>
+	<li>Fixed bug 673 - Command-F doesn't work in Execute Code editor</li>
+	<li>Fixed bug 735 - execute_program can't execute .app packages</li>
+	<li>Fixed bug 741 - show_debug_message() doesn't seem to work</li>
+	<li>Fixed bug 745 - Cannot access user's home folder using ~/</li>
+	<li>Fixed bug 744 - About page numbers</li>
+	<li>Fixed bug 740 - Messages don't work in 3D Mode</li>
+</ul>
+<h1 id="version-7.5.65">Version 7.5.65</h1>
+<p>Main change in this version is an updated Help file (I managed to get the source files for the 7.0 help, rather than just the CHM).
+	Please report any help file bugs as well and I can now update this easily</p>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 725 - Help file is outdated and doesn't refer to the Mac version</li>
+	<li>Fixed bug 728 - Cannot Save image</li>
+	<li>Fixed bug 720 - Can't find gamemaker_version and os_type (and constants) in help file</li>
+</ul>
+<h1 id="version-7.5.64">Version 7.5.64</h1>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 721 - Search in Scripts does not work</li>
+	<li>Fixed bug 722 - sound_volume() doesn't work</li>
+	<li>Fixed bug 724 - d3d_set_projection_ext does not work</li>
+	<li>Fixed bug 723 - Views sizes and positions are incorrect</li>
+</ul>
+<h1 id="version-7.5.63">Version 7.5.63</h1>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 674 - Bug involving drawing to a surface in a view</li>
+	<li>Fixed bug 711 - Room Problem</li>
+	<li>Fixed bug 718 - Color incorrect when drawing 3D geometry</li>
+	<li>Fixed bug 716 - gamemaker_version and os_type are absent</li>
+</ul>
+<h1 id="version-7.5.62">Version 7.5.62</h1>
+<p>Resquashed the bug preventing other users from using Game Maker on the same machine.</p>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 714 - scroll wheel is ignored completely by games.</li>
+	<li>Fixed bug 702 - Message and question boxes are totally broken.</li>
+</ul>
+<h1 id="version-7.5.61">Version 7.5.61</h1>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 709 - Invalid Licence due to + (plus character) in email address</li>
+	<li>Fixed bug 700 - Uninstall extension not working</li>
+	<li>Fixed bug 699 - "About..." window of GM executables</li>
+	<li>Fixed bug 704 - Crash when copy and paste background to sprite</li>
+	<li>Fixed bug 705 - Cannot quit Game Maker License Check if unregistered</li>
+</ul>
+<h1 id="version-7.5.60">Version 7.5.60</h1>
+<p>when Game Maker copied to Applications, other users could not use it.</p>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 697 - Custom sprite mouse hidden</li>
+	<li>Fixed bug 696 - Game executable app bundles contain hidden .svn directories</li>
+	<li>Fixed bug 685 - We should be able to see the version number in the "About" screen</li>
+</ul>
+<h1 id="version-7.5.59">Version 7.5.59</h1>
+<p>Game Maker extensions that use native DLL's will now work, as long as they are provided with a Mac dynamic library within the package.</p>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 676 - sprite_create_from_surface not working again</li>
+	<li>Fixed bug 668 - Room Editor: can't give backwards negative speed values</li>
+	<li>Fixed bug 684 - Sprite Editor: default Preview speed is 0</li>
+	<li>Fixed bug 682 - Fonts don't look Good</li>
+</ul>
+<h1 id="version-7.5.58">Version 7.5.58</h1>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 667 - Dragging an event in the "actions" box</li>
+	<li>Fixed bug 668 - message_text_font makes the game crash.</li>
+	<li>Fixed bug 666 - Many games crash before they even start.</li>
+</ul>
+<h1 id="version-7.5.57">Version 7.5.57</h1>
+<p>Added Extras link to website for downloading the Sprites, Backgrounds, Sounds and Tutorials.</p>
+<p>License check URL is now escaped correctly</p>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 662 - Icons missing from various menus</li>
+	<li>Fixed bug 633 - Show event thumbnails when selecting an event.</li>
+</ul>
+<h1 id="version-7.5.56">Version 7.5.56</h1>
+<p>Printer issue should be resolved now!</p>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 659 - Image Editor - Zoom in/out glitch.</li>
+	<li>Fixed bug 660 - Image Editor - Color picker glitch.</li>
+	<li>Fixed bug 661 - Ctrl and Alt Events do not work!.</li>
+	<li>Fixed bug 663 - screen_save produces a solid black bmp.</li>
+</ul>
+<h1 id="version-7.5.55">Version 7.5.55</h1>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 655 - Constant name $$$MacIcon$$$ is not valid.</li>
+</ul>
+<h1 id="version-7.5.54">Version 7.5.54</h1>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 647 - Custom game icon does not save.</li>
+	<li>Fixed bug 652 - External text editor failure</li>
+	<li>Fixed bug 640 - Libraries</li>
+	<li>Fixed bug 646 - Updates, Extension Packages, Library Files</li>
+</ul>
+<h1 id="version-7.5.53">Version 7.5.53</h1>
+<p>Yet another, new icon for the Game Maker IDE, better fidelity (and green)</p>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 626 - External Sound does not work.</li>
+	<li>Fixed bug 645 - You can only have one instance of GameMaker Open (see note on bug for more info)</li>
+</ul>
+<h1 id="version-7.5.52">Version 7.5.52</h1>
+<p>New icon for the Game Maker IDE</p>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 632 - In Game Sound Volume Error.</li>
+	<li>Fixed bug 635 - Particles mess up when changing to fullscreen</li>
+	<li>Fixed bug 629 - Room editor gives Windows Keyboard command prompts.</li>
+</ul>
+<h1 id="version-7.5.51">Version 7.5.51</h1>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 491 - Script colors are incorrect.</li>
+	<li>Fixed bug 594 - Thumbnail and transparencies are still messed up</li>
+	<li>Fixed bug 624 - Overwriting Existing files</li>
+	<li>Fixed bug 625 - PNG backgrounds loaded with background_add or background_add_alpha are drawn incorrectly</li>
+</ul>
+<h1 id="version-7.5.50">Version 7.5.50</h1>
+<p>I have added 2 global variables</p>
+<ul>
+	<li>gamemaker_version - will be set to 701, this is a GM8 global variable so provided for compatibility</li>
+	<li>os_type - this will be set to one of 'os_win32', 'os_win64' or 'os_macosx' (obviously for gm4mac it will be os_macosx).
+</ul>
+<p>Also added is the constant values os_win32, os_win64 and os_macosx</p>
+<p>These changes will be added to a future version on windows Game Maker</p>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 598 - List index (number) out of bounds when editing sounds.</li>
+	<li>Fixed bug 602 - Remove extension package</li>
+	<li>Fixed bug 601 - Instroduce GM8 variable</li>
+</ul>
+<h1 id="version-7.5.49">Version 7.5.49</h1>
+<p>Extension packages can now be installed and assuming that they
+	do not use external DLL's they appear to work. I have tested 2 packages,
+	the Motion Planning Extension and the Room Transition Extension and they
+	both appear to work fine, give them a try and if you see any problems then
+	let me know by filing a bug (remember to include an example GMK and the extension GEX package).</p>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 594 - Thumbnail and room transparencies are still messed up.</li>
+	<li>Fixed bug 595 - Several sound problems</li>
+	<li>Fixed bug 352 - Adding extensions doesn't work</li>
+	<li>Fixed bug 160 - Extension Packages won't work</li>
+</ul>
+<h1 id="version-7.5.48">Version 7.5.48</h1>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 567 - Empty background prevents game from running.</li>
+	<li>Fixed bug 583 - Loading GIF externally incorrectly displays colours</li>
+	<li>Fixed bug 585 - Error doesn't locate error</li>
+	<li>Fixed bug 589 - "Edit Sound" glitches GM when no sound editor has been selected</li>
+	<li>Fixed bug 588 - Watch expression errors kills game</li>
+</ul>
+<h1 id="version-7.5.47">Version 7.5.47</h1>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 576,559 - Unable to Edit or Make Images.</li>
+	<li>Fixed bug 579 - Game Identifier incorrect</li>
+	<li>Fixed bug 570 - Really buggy image editor</li>
+	<li>Fixed bug 572 - Glitchy handling of .icns file</li>
+	<li>Fixed bug 578 - Crash at run game</li>
+	<li>Fixed bug 575 - Wrong Color Text and Wrong Size</li>
+	<li>Fixed bug 502 - icon</li>
+	<li>Fixed bug 480 - Custom Game Icons</li>
+</ul>
+<h1 id="version-7.5.46">Version 7.5.46</h1>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 558,564 - .gif files colors are inverted</li>
+	<li>Fixed bug 556 - Sprite Thumbnail not showing transparent.</li>
+	<li>Fixed bug 560 - Sprite Editor: Bounding Box -> Automatic doesn't work.</li>
+	<li>Fixed bug 518 - Windows GMK files' Game Information contains visible RTF code</li>
+	<li>Fixed bug 80 - Unable to render full tileset.</li>
+	<li>Fixed bug 569 - Get Open Filename wont work.</li>
+	<li>Fixed bug 562,568 - Cannot go fullscreen</li>
+	<li>Fixed bug 565 - Ini file don't go in the same directory (folders)</li>
+</ul>
+<h1 id="version-7.5.45">Version 7.5.45</h1>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 548 - keyboard_wait not working</li>
+	<li>Fixed bug 547 - Loading progress bar not working</li>
+	<li>Fixed bug 477,534,553 - Image Editor colours not correct</li>
+	<li>Fixed bug 551 - 3D lighting, fog and colouring issues</li>
+	<li>Fixed bug 552 - Room Editor: can't set background images X or Y greater than 100</li>
+</ul>
+<h1 id="version-7.5.44">Version 7.5.44</h1>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 540 - Image Editor tries to divide by zero</li>
+	<li>Fixed bug 520 - Debug Mode is broken</li>
+	<li>Fixed bug 544 - Debug Mode - Pause quits the game</li>
+	<li>Fixed bug 510 - Odd bug with surfaces and changing rooms with different views.</li>
+	<li>Fixed bug 542 - background_replace doesn't work if transparent is true</li>
+	<li>Fixed bug 536 - Errors produced in fullscreen mode appear behind the game screen.</li>
+	<li>Fixed bug 537 - d3d_set_projection_ortho problems.</li>
+	<li>Fixed bug 545 - Window wont display.</li>
+	<li>Fixed bug 543 - sprites/backgrounds : Previews/thumbnails not transparent.</li>
+	<li>Fixed bug 535 - Drawing 2px line in sprite editor is glitchy.</li>
+</ul>
+<h1 id="version-7.5.43">Version 7.5.43</h1>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 526 - Sounds need to be preload.</li>
+	<li>Fixed bug 528 - Press F4 to switch to fullscreen causes glitch.</li>
+	<li>Fixed bug 530 - keybaord_string ndoes not work.</li>
+	<li>Fixed bug 531 - Grid problem in path editor.</li>
+</ul>
+<h1 id="version-7.5.42">Version 7.5.42</h1>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 509,515 - Can't Drag in Resource Tree.</li>
+	<li>Fixed bug 514 - Can't Open Help</li>
+	<li>Fixed bug 512 - Saving Sprites</li>
+	<li>Fixed bug 519 - Manual sprite bounding box settings can't be saved/</li>
+	<li>Fixed bug 517 - joystick_check_button() returns floats instead of 0 or 1.</li>
+	<li>Fixed bug 511 - Command-Q should quit compiled game.</li>
+	<li>Fixed bug 516 - image_angle doesn't work with off-centered sprite centers.</li>
+	<li>Fixed bug 524 - draw_sprite_ext and other _ext drawing functions' alpha does not work correctly.</li>
+	<li>Fixed bug 525 - draw_path does not function correctly.</li>
+	<li>Fixed bug 508 - Effect don't work properly.</li>
+</ul>
+<h1 id="version-7.5.41">Version 7.5.41</h1>
+<p>Fixed bug... </p>
+<ul>
+	<li>Fixed bug 308 - show_message font is settable with draw_set_font.</li>
+	<li>Fixed bug 507 - Files left in the /tmp dir</li>
+	<li>Fixed bug 506 - External loading files not working (It was files in sub directories)</li>
+	<li>Fixed bug 505 - Error messages are too long.</li>
+	<li>Fixed bug with Gif loading - sprites and backgrounds should work better</li>
+</ul>
+<h1 id="version-7.5.40">Version 7.5.40</h1>
+<p>Fixed bug... Run should work again</p>
+<ul>
+	<li>Fixed bug 503 - Run no longer works.</li>
+</ul>
+<h1 id="version-7.5.39">Version 7.5.39</h1>
+<p>Fixed various bugs....</p>
+<ul>
+	<li>Fixed scroll bar bugs so toolbars no longer obscured.</li>
+	<li>Fix security hole....</li>
+</ul>
+<h1 id="version-7.5.38">Version 7.5.38</h1>
+<p>Fixed various bugs....</p>
+<ul>
+	<li>Fixed bug 498 - joystick_exists() returns a float</li>
+	<li>Fixed bug 433 - Loading resources from files doesn't work when running a program in Game Maker</li>
+	<li>Fixed bug 455 - externallyh loading sounds doesn't work.</li>
+	<li>Fixed bug 489 - Some sprites are still drawn blurry/incorrectly</li>
+	<li>Fixed bug 501 - Backgrounds aren't scaled quite correctly in scaled-up viewports</li>
+	<li>Fixed bug 499 - Calling an undefined script/function halts the game instead of showing an error</li>
+	<li>Fixed bug 500 - Sometimes the Abort button doesn't abort</li>
+	<li>Fixed bug 497 - Error Messages: code lines are squashed together</li>
+	<li>Fixed bug 437 - mouse_check_button_pressed doesn't work consistently when called several hundred times per second.</li>
+</ul>
+<h1 id="version-7.5.37">Version 7.5.37</h1>
+<p>Fixed various bugs....</p>
+<ul>
+	<li>Fixed bug 490 - draw_set_blend_mode()</li>
+	<li>Fixed bug 496 - sprite_create_from_surface() creates sprites upside down</li>
+	<li>Modified how Run Game works... not finished though (still does not load external files properly, directory is set incorrectly)</li>
+</ul>
+<h1 id="version-7.5.36">Version 7.5.36</h1>
+<p>Fixed various bugs....</p>
+<ul>
+	<li>Fixed bug 452 - surface_get_pixel not working</li>
+	<li>create sprite from surface fixed as well</li>
+	<li>show_message fixed</li>
+	<li>code error dialog now working again.</li>
+</ul>
+<h1 id="version-7.5.35">Version 7.5.35</h1>
+<p>Fixed various bugs....</p>
+<ul>
+	<li>Fixed bug 447 - Sound does nothing - removed Windows effects that have no Mac equivalent</li>
+	<li>Fixed bug 406,458,459,295,435 - Blurry graphics - Bilinear filtering only applied when requested rather than all the time.</li>
+	<li>Fixed bug 481, 465, 482 - Sprites rendered incorrectly - some sprites were cut incorrectly</li>
+	<li>Fixed bug 443 - custom loading images cause crash</li>
+	<li>Fixed bug 444 - draw_set_alpha not working</li>
+</ul>
+<h1 id="version-7.5.34">Version 7.5.34</h1>
+<p>Fixed various bugs....</p>
+<ul>
+	<li>Fixed bug 422,448,449 - Rotate does not work</li>
+	<li>Fixed bug 438 - Flood Fill does not work</li>
+	<li>Fixed bug 391 - Add sprite from file</li>
+	<li>Fixed bug 446 - Sound editor problems</li>
+	<li>Fixed bug 474 - Script colour coding now works</li>
+</ul>
+<h1 id="version-7.5.33">Version 7.5.33</h1>
+<p>Fixed Runner so it works</p>
+<p>Fixed Rendering in the Runner so graphics are not cut in the middle</p>
+<ul>
+	<li>Fixed bug 261,379 - no colour coding in code editor</li>
+	<li>Fixed bug 466 - Find (and Search and Replace) does not work</li>
+</ul>
+<h1 id="version-7.5.32">Version 7.5.32</h1>
+<p>Fixed various bugs...</p>
+<ul>
+	<li>Fixed bug 261,379 - no colour coding in code editor</li>
+	<li>Fixed bug 466 - Find (and Search and Replace) does not work</li>
+</ul>
+<h1 id="version-7.5.31">Version 7.5.31</h1>
+<p>Fixed various bugs...</p>
+<ul>
+	<li>Fixed bug 398 - setting image_xscale to -1 makes sprites invisible</li>
+	<li>Fixed bug 401 - Room transitions don't work.</li>
+	<li>Fixed bug 432 - Surfaces don't work</li>
+	<li>Fixed bug 435 - Drawn text looks all wrong in a scaled up viewport</li>
+	<li>Fixed bug 426 - text_edit.bmp does not exist!</li>
+	<li>Fixed bug 451 - make VK_ALT, VK_SHIFT and VK_CONTROL work like windows... </li>
+	<li>Fixed bug 453 - sound_stop stops looping sounds.</li>
+	<li>Fixed bug 457 - draw_text() draws text in the wrong colours.</li>
+</ul>
+<h1 id="version-7.5.30">Version 7.5.30</h1>
+<p>Fixed various bugs...</p>
+<ul>
+	<li>Fixed bug 407 - Bizarre mispositioning of text</li>
+	<li>Fixed bug 408 - image_blend works incorrectly with same-coloured sprites.</li>
+	<li>Fixed bug 409 - Playing sound interferes with looping sounds</li>
+	<li>Fixed bug 431 - Several keyboard_check constants still don't work</li>
+	<li>Fixed bug 392 - keyboard_check</li>
+	<li>Fixed bug 430 - keyboard_check(ord()) only works for lower case</li>
+	<li>Fixed bug 434 - keyboard_check_direct should simply call keyboard_check</li>
+	<p>Also in this build I fixed an issue with flickering so hopefully things will be a bit more stable... image wise anyway</p>
+</ul>
+<h1 id="version-7.5.29">Version 7.5.29</h1>
+<p>Fixed various bugs...</p>
+<ul>
+	<li>Fixed bug 392 - keyboard_check not working</li>
+	<li>Fixed bug 397 - Can't seem to edit Constants at all (Constants are fully editable now).</li>
+	<li>Fixed bug 400 - draw_rectangle_color does not draw colours right</li>
+	<li>Fixed bug 404 - High score list problem - fixed input of name on High Score and also font rendering issue.</li>
+</ul>
+<h1 id="version-7.5.28">Version 7.5.28</h1>
+<p>Fixed various bugs...</p>
+<ul>
+	<li>Fixed bug 390 - Graphics incorrect in full screen mode</li>
+	<li>Fixed bug 423 - Image Editor - Pick does not work properly</li>
+	<li>Fixed bug 416 - Image Editor - Clear sets the wrong colour</li>
+	<li>Fixed bug 418 - Image Editor - Mirror horizontal does not work correctly</li>
+	<li>Fixed bug 419 - Image Editor - Mirror vertical does not work correctly</li>
+	<li>Fixed bug 420 - Image Editor - Rotate 90 cw and cc does not work correctly</li>
+	<li>Fixed bug 421 - Image Editor - Rotate 180 does not work correctly</li>
+	<li>Fixed bug 393,405,410 - Unable to double click on GMK file in Finder and start Game Maker.</li>
+</ul>
+<h1 id="version-7.5.27">Version 7.5.27</h1>
+<p>Fixed various bugs...</p>
+<ul>
+	<li>Image Editor improved vastly... most functions are working now - More to follow in 7.5.28</li>
+	<li>Fixed bug 323 - MIDI sound playback causing crash.</li>
+	<li>Fixed Game information problem - Constants causing crash</li>
+</ul>
+<h1 id="version-7.5.26">Version 7.5.26</h1>
+<p>Fixed various bugs...</p>
+<ul>
+	<li>Fixed bug 385 - Still no help documentation - HTML help now added</li>
+	<li>Fixed bug 384 - Games still run with GM Banner.</li>
+	<li>Fixed bug 381 - Run Game Error dialog.</li>
+	<li>Fixed bug 378 - External loading does not work</li>
+</ul>
+<h1 id="version-7.5.25">Version 7.5.25</h1>
+<p>Fixed various bugs...</p>
+<ul>
+	<li>Fixed bug 112 - incorrect colours in games.</li>
+	<li>Fixed bug 360 - colours not working in games.</li>
+	<li>Updated copyright notices</li>
+</ul>
+<h1 id="version-7.5.24">Version 7.5.24</h1>
+<p>Test version for update - code is the same as 7.5.23</p>
+<ul>
+	<li>Updated License check code with fallbacks.</li>
+</ul>
+<h1 id="version-7.5.23">Version 7.5.23</h1>
+<p>First public release of full Game Maker for Mac.</p>
+<ul>
+	<li>Updated License check code with fallbacks.</li>
+</ul>
+<h1 id="version-7.5.22">Version 7.5.22</h1>
+<p>First public release of full Game Maker for Mac.</p>
+<ul>
+	<li>Added display of time left in the trial</li>
+	<li>updated URL's to point at the new server</li>
+</ul>
+</body>
+
+
+
+
+<!--
+     FILE ARCHIVED ON 23:52:21 cze 26, 2015 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 12:50:52 kwi 13, 2017.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

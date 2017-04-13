@@ -8,10 +8,18 @@ if (file_exists('result.tmp')) {
 
 $gmapis = array(
 	'gm2ide' => array(
-		'name' => 'GMS 2.x IDE',
+		'name' => 'GMS 2.x IDE (Windows)',
 		'notes' => 'http://gms.yoyogames.com/ReleaseNotes.html',
 		'rss' => 'http://gms.yoyogames.com/update-win.rss',
 		'download' => 'http://gms.yoyogames.com/GameMakerStudio-Installer-%s.exe',
+		'desc' => 'IDE - application in which you can project games using GML or Drag\'n\'drop.',
+		'enabled' => true,
+	),
+	'gm2idemac' => array(
+		'name' => 'GMS 2.x IDE (Mac)',
+		'notes' => 'http://gms.yoyogames.com/ReleaseNotes-I.html',
+		'rss' => 'http://gms.yoyogames.com/update-mac.rss',
+		'download' => 'http://gms.yoyogames.com/GameMakerStudio2-%s.pkg',
 		'desc' => 'IDE - application in which you can project games using GML or Drag\'n\'drop.',
 		'enabled' => true,
 	),
@@ -45,16 +53,18 @@ $gmapis = array(
 	),
 	'gm4win' => array(
 		'name' => 'GM 8.x',
-		'notes' => 'http://store.yoyogames.com/downloads/gm4win/release-notes.html',
+		#'notes' => 'http://store.yoyogames.com/downloads/gm4win/release-notes.html',
+		'notes' => URL . 'archive/gm4win.html',
 		'rss' => 'http://store.yoyogames.com/downloads/gm4win/update.rss',
-		'download' => 'http://store.yoyogames.com/downloads/gm4win/GameMaker-Installer-%s.exe',
+		#'download' => 'http://store.yoyogames.com/downloads/gm4win/GameMaker-Installer-%s.exe',
 		'enabled' => true,
 	),
 	'gm4mac' => array(
 		'name' => 'GM for Mac OS X',
-		'notes' => 'http://store.yoyogames.com/downloads/gm4mac/release-notes.html',
+		#'notes' => 'http://store.yoyogames.com/downloads/gm4mac/release-notes.html',
+		'notes' => URL . 'archive/gm4mac.html',
 		'rss' => 'http://store.yoyogames.com/downloads/gm4mac/update.rss',
-		'download' => 'http://appstore.yoyogames.com/downloads/gm4mac/Game_Maker-%s.dmg',
+		#'download' => 'http://appstore.yoyogames.com/downloads/gm4mac/Game_Maker-%s.dmg',
 		'enabled' => true,
 	),
 );

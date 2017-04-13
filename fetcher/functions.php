@@ -5,13 +5,13 @@ function get_version($name, $data, $addBr = true)
 	if (empty($data[$name]['version'])) {
 		return 'N/A';
 	} else {
-		return 'Current version is <b>' . $data[$name]['version'] . '</b>.' . ($addBr ? '<br/>' : ' ') . 'Released ' . days_ago($data[$name]['daysAgo']);
+		return 'Current version is <b>' . $data[$name]['version'] . '</b>.' . ($addBr ? '<br/><small>' : ' ') . 'Released ' . days_ago($data[$name]['daysAgo']) . ($addBr ? '</small>' : '');
 	}
 }
 
 function get_download($name, $gmapi, $data)
 {
-	if (empty($gmapi[$name]['download'])) {
+	if (empty($gmapi[$name]['download']) or empty($data[$name])) {
 		return '';
 	} else {
 		return '<a class="btn btn-danger" href="' . sprintf($gmapi[$name]['download'], $data[$name]['version']) . '">Download <em>' . $gmapi[$name]['name'] . '</em> - <small>v</small>' . $data[$name]['version'] . ' directly</a>';
@@ -24,8 +24,16 @@ function days_ago($time)
     if ($time < 0) {
         return '- not yet ;)';
     }
-    if ($time < 7) {
 
+	$d1 = new DateTime();
+	$d2 = new DateTime();
+	$d2->sub(new DateInterval(('P' . $time . 'D')));
+
+	$diff = $d1->diff($d2);
+
+    $s .= date('d/m/Y', $d2->getTimestamp()) . ', ';
+
+    if ($time < 7) {
         if ($time == 0) {
             $s .= '<b>TODAY</b>';
         } else {
@@ -38,22 +46,16 @@ function days_ago($time)
         return $s . ' <span class="badge badge-warning">NEW!</span>';
     }
 
-	$d1 = new DateTime();
-	$d2 = new DateTime();
-	$d2->sub(new DateInterval(('P' . $time . 'D')));
-
-	$diff = $d1->diff($d2);
-
 	$addDaysInBracket = false;
 
 	if ($diff->y > 0) {
 		$s .= $diff->y . ' year' . ($diff->y > 1 ? 's' : '') . ', ';
-		$addDaysInBracket = true;
+		//$addDaysInBracket = true;
 	}
 
 	if ($diff->m > 0) {
 		$s .= $diff->m . ' month' . ($diff->m > 1 ? 's' : '') . ', ';
-		$addDaysInBracket = true;
+		//$addDaysInBracket = true;
 	}
 
 	$s .= $diff->d . ' day' . ($diff->d > 1 ? 's' : '') . '';

@@ -10,16 +10,20 @@ include_once('fetcher/gmapi-data.php');
 //}
 
 $rss = array(
-	'gm2ide' => 'http://gms.yoyogames.com/update-win.rss',
-	'gm2runtime' => 'http://gms.yoyogames.com/Zeus-Runtime.rss',
-	'gmstudio' => 'http://store.yoyogames.com/downloads/gm-studio/update-studio-stable.rss',
+	'gm2ide'       => 'http://gms.yoyogames.com/update-win.rss',
+	'gm2idemac'    => '',
+	#'gm2idemac'    => 'http://gms.yoyogames.com/update-win.rss',
+	'gm2runtime'   => 'http://gms.yoyogames.com/Zeus-Runtime.rss',
+	'gmstudio'     => 'http://store.yoyogames.com/downloads/gm-studio/update-studio-stable.rss',
 	'gmstudiobeta' => 'http://store.yoyogames.com/downloads/gm-studio/update-studio.rss',
-	'gmstudioea' => 'http://store.yoyogames.com/downloads/gm-studio-ea/update-studio.rss',
-	'gm4win' => 'http://store.yoyogames.com/downloads/gm4win/update.rss',
-	'gm4mac' => 'http://store.yoyogames.com/downloads/gm4mac/update.rss',
+	'gmstudioea'   => 'http://store.yoyogames.com/downloads/gm-studio-ea/update-studio.rss',
+	'gm4win'       => '',
+	'gm4mac'       => '',
+	#'gm4win' => 'http://store.yoyogames.com/downloads/gm4win/update.rss',
+	#'gm4mac' => 'http://store.yoyogames.com/downloads/gm4mac/update.rss',
 	#'gm4html5' => 'http://store.yoyogames.com/downloads/gm4html5/update-html5.rss',
 );
-echo phpversion() . PHP_EOL;
+echo 'PHP ' . phpversion() . PHP_EOL;
 
 $final = array();
 
@@ -30,10 +34,15 @@ $errors = false;
 
 foreach ($rss as $name => $url) {
 
+	if (empty($url)) {
+		echo 'Skipping ' . $name . ' - rss path removed, probably inactive.' . PHP_EOL;
+		continue;
+	}
+
 	curl_setopt($ch, CURLOPT_URL, $url);
 	$contents = curl_exec($ch);
 
-	$xml = simplexml_load_string($contents);
+	$xml = @simplexml_load_string($contents);
 
 	//$xml = @simplexml_load_file($url);
 	if (!empty($xml)) {
@@ -52,37 +61,25 @@ foreach ($rss as $name => $url) {
 			$info = (strtotime($i1['pubDate']) > strtotime($i2['pubDate'])) ? $i1 : $i2;
 
 			$final[$name] = array(
-				'version' => preg_replace('/[^\d\.]/i', '', $info['title']),
-				'released' => $info['pubDate'],
-				'releasedUT' => strtotime($info['pubDate']),
+				'version'      => preg_replace('/[^\d\.]/i', '', $info['title']),
+				'released'     => $info['pubDate'],
+				'releasedUT'   => strtotime($info['pubDate']),
 				'fetchedByApi' => time(),
 			);
 			$final[$name]['daysAgo'] = ceil((time() - $final[$name]['releasedUT']) / 86400);
 		}
 	} else {
-		$final[$name] = array(
-			'version' => '-',
-			'released' => '-',
-			'releasedUT' => 0,
-			'daysAgo' => -1,
-		);
-		$errors = true;
+		echo 'Can\'t read ' . $name . ' RSS' . PHP_EOL;
 	}
 }
+
+echo PHP_EOL . '-- FETCHED, parse -- ' . PHP_EOL . PHP_EOL;
 
 curl_close($ch);
 
 $old_versions = json_decode(file_get_contents(dirname(__FILE__) . '/result.tmp'), true);
 
-//print_r($old_versions);
-
-/*if (count($final) > 1 && !$errors) {
-	if (php_sapi_name() == 'cli') {
-		file_put_contents(dirname(__FILE__) . '/result.tmp', json_encode($final));
-	} else {
-		file_put_contents('result.tmp', json_encode($final));
-	}
-}*/
+$old_versions['gm4win']['version'] = '8.1.141';
 
 // twitter
 
@@ -94,27 +91,30 @@ if (!$errors) {
 	$twitter = null;
 
 	$names = array(
-		'gm2ide' => '#GameMakerStudio2 IDE',
-		'gm2runtime' => '#GameMakerStudio2 Runtime',
-		'gmstudio' => '#GameMaker #Studio (stable)',
+		'gm2ide'       => '#GameMakerStudio2 IDE',
+		'gm2runtime'   => '#GameMakerStudio2 Runtime',
+		'gmstudio'     => '#GameMaker #Studio (stable)',
 		'gmstudiobeta' => '#GameMaker #Studio (beta)',
-		'gmstudioea' => '#GameMaker #Studio (EAP)',
-		/*
-		'gm4html5' => 'GameMaker:HTML5',
-		'gm4mac' => 'GameMaker for Mac',
-		*/
-		'gm4win' => 'GameMaker 8.1 Standard',
+		'gmstudioea'   => '#GameMaker #Studio (EAP)',
+		'gm4html5'     => 'GameMaker:HTML5',
+		'gm4mac'       => 'GameMaker for Mac',
+		'gm4win'       => 'GameMaker 8.1 Standard',
 	);
 	$releaseNotes = array(
-		'gm2ide' => 'http://gmapi.gnysek.pl/release/gm2ide',
-		'gm2runtime' => 'http://gmapi.gnysek.pl/release/gm2ide',
-		'gmstudio' => 'http://gmapi.gnysek.pl/release/gmstudio',
+		'gm2ide'       => 'http://gmapi.gnysek.pl/release/gm2ide',
+		'gm2runtime'   => 'http://gmapi.gnysek.pl/release/gm2ide',
+		'gmstudio'     => 'http://gmapi.gnysek.pl/release/gmstudio',
 		'gmstudiobeta' => 'http://gmapi.gnysek.pl/release/gmstudiobeta',
-		'gmstudioea' => 'http://gmapi.gnysek.pl/release/gmstudioea',
-		'gm4win' => '',
+		'gmstudioea'   => 'http://gmapi.gnysek.pl/release/gmstudioea',
+		'gm4win'       => '',
+		'gm4mac'       => '',
 	);
 
 	foreach ($old_versions as $name => $old_data) {
+
+		if (!array_key_exists($name, $final)) {
+			$final[$name] = $old_versions[$name];
+		}
 
 		if (!empty($old_versions[$name]['fetchedByApi'])) {
 			$final[$name]['fetchedByApi'] = $old_versions[$name]['fetchedByApi'];
@@ -143,7 +143,7 @@ if (!$errors) {
 		}
 	}
 
-	foreach($final as $name => $value) {
+	foreach ($final as $name => $value) {
 		$_date1 = new DateTime(date('Y-m-d', $final[$name]['fetchedByApi']));
 		$_date2 = new DateTime();
 		$dDiff = $_date1->diff($_date2);

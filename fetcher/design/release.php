@@ -1,14 +1,26 @@
 <?php include('fetcher/design/header.php'); ?>
 <?php global $resultFile; ?>
 <?php global $gmapis; ?>
-<p></p>
-<?php #include_once('fetcher/design/twitter-timeline.php'); ?>
 
-<p style="line-height: 28px;" class="text-center">
-	<?php foreach ($gmapis as $name => $data): ?>
-		<a class="btn btn-small" href="<?php echo URL; ?>release/<?php echo $name; ?>"><?php echo $data['name']; ?></a>
+<p>
+	<span class="pull-right">
+	<small><strong>Archived</strong></small><br>
+	<?php foreach (array('gm4win', 'gm4mac') as $name): ?>
+		<a class="btn btn-small" href="<?php echo URL; ?>release/<?php echo $name; ?>"><?php echo $gmapis[$name]['name']; ?></a>
 	<?php endforeach; ?>
+	</span>
+
+	<small><strong>GameMaker Studio 2</strong></small><br>
+	<?php foreach (array('gm2ide', 'gm2idemac', 'gm2runtime') as $name): ?>
+		<a class="btn btn-small" href="<?php echo URL; ?>release/<?php echo $name; ?>"><?php echo $gmapis[$name]['name']; ?></a>
+	<?php endforeach; ?><br>
+	<small><strong>GameMaker Studio 1.x</strong></small><br>
+	<?php foreach (array('gmstudio', 'gmstudiobeta', 'gmstudioea') as $name): ?>
+		<a class="btn btn-small" href="<?php echo URL; ?>release/<?php echo $name; ?>"><?php echo $gmapis[$name]['name']; ?></a>
+	<?php endforeach; ?><br>
 </p>
+
+<hr>
 
 <?php if (array_key_exists($version[1], $gmapis) and array_key_exists($version[1], $resultFile)): ?>
 	<h3 style="color: #039d5b; margin-bottom: 0px;">Latest update for</h3>

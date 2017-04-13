@@ -12,6 +12,13 @@
 		.container-fluid {
 			padding: 0px;
 		}
+		small {
+			font-size: 10px;
+			line-height: 12px;
+		}
+		.alert {
+			margin-bottom: 5px;
+		}
 	</style>
 </head>
 <body style="padding-top: 50px;">

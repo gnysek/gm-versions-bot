@@ -1,0 +1,1340 @@
+
+<html>
+<head>
+
+
+	<script type="text/javascript" src="/static/js/analytics.js"></script>
+	<script type="text/javascript">archive_analytics.values.server_name="wwwb-app4.us.archive.org";archive_analytics.values.server_ms=246;</script>
+	<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+	<title>Game Maker 8.x release notes</title>
+	<style type="text/css">
+
+		body
+		{
+			background-color:#dff1c0;
+		}
+		h1 {
+			background-color: #7c9453;
+			color: #f0f0f0;
+			padding: 4px;
+			border-style:solid;
+			border-color:#000000;
+			border-width:1px;
+			box-shadow: 5px 5px 5px #273b05;
+			-moz-box-shadow: 5px 5px 5px #273b05;
+			-webkit-box-shadow: 5px 5px 5px #273b05;
+			zoom:1; /* This enables hasLayout, which is required for older IE browsers */
+			filter: progid:DXImageTransform.Microsoft.Shadow(color='#273b05', Direction=135, Strength=7);
+		}
+		ul {
+			list-style-type:square;
+			font-size: 13;
+		}
+	</style>
+	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+</head>
+
+<body>
+
+<h1 id="version-8.1.141">Version 8.1.141</h1>
+<!--   -->
+<ul><u><b><font size="5">Changes</font></b></u>
+	<li>Option added to force Software Vertex Processing when Direct3D is initialised, this should solve some driver issues and restores GM8.0 behaviour (NOTE: This will be slow rendering down but may improve compatibility)</li>
+	<li>
+		Added several new GML functions (NOTE: No Help entries just yet)
+		<ul>
+			<li>clamp( number, min, max ) - returns number once it has been clamped between the min and max values</li>
+			<li>lerp( val1, val2, amount ) - returns val1 + ((val2 - val1) * amount). (NOTE: amount is not clamped, but is expected to be in 0..1 range)</li>
+		</ul>
+	</li>
+</ul>
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003781">0003781</a>	Non-existing surface Crashes the Program</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003737">0003737</a>	d3d_set_projection_ext stops execution of script</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003429">0003429</a>	surfaces and display_reset() results in crash</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003368">0003368</a>	License stamper does not work</li>
+</ul>
+
+
+<ul><u><b><font size="5">Addressed issue</font></b></u>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003791">0003791</a>	Shifting part of the room</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003767">0003767</a>	Set region position</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003722">0003722</a>	Reading in online highscores using 39dll.dll has stopped working</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003720">0003720</a>	rotating view [wish]</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003694">0003694</a>	Lib's and others languages</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003604">0003604</a>	Rounding errors</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003586">0003586</a>	Game window appears to lose all graphical data and crash.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003584">0003584</a>	I HATE WINDOWS HOW ABOUT SOME LINUX SUPPORT?</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003579">0003579</a>	install link not working </li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003528">0003528</a>	Unexplained executable crash (unique to GM8.1)</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003472">0003472</a>	Can't upgrade to GM 8.1</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003398">0003398</a>	Bold courier text overlaps</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003366">0003366</a>	Don't increment image_index if there are less than 2 images</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003365">0003365</a>	Drawing glitches on 250 wide panel</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003357">0003357</a>	Cursor_sprite is drawn over and over...</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003355">0003355</a>	My game maker 8.1 doesn't have all categories such as (other)</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003298">0003298</a>	GamerMaker 8.1 lite</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003205">0003205</a>	Step avoiding & step towards are missing from Move tab in 8.1.139</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003200">0003200</a>	8.1.139 Missing actions</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003193">0003193</a>	missing two move actions</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003184">0003184</a>	Certain actions are not showing up like they are suppose to</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003180">0003180</a>	game maker 8.1</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003177">0003177</a>	Many functions disappeared</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003158">0003158</a>	Want to re-install Registry </li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003142">0003142</a>	3d lights in the previous room show up in the next room.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003111">0003111</a>	text drawn with font_add_sprite is smoothed, kind of as if it were being anti-aliased</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003110">0003110</a>	Gray Screen</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003085">0003085</a>	Objects wont move</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0003084">0003084</a>	This is unusual.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0001846">0001846</a>	Range Check error/Access Violation while adding large tiles in room</li>
+</ul>
+
+
+<h1 id="version-8.1.140">Version 8.1.140</h1>
+<ul><u><b><font size="5">Changes</font></b></u>
+	<li>Missing library functions added back in</li>
+	<li>Adjusted the timeout for license checking</li>
+</ul>
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>0000757	Script end when using sprite_add_sprite																							 </li>
+	<li>0003088	Ctrl - Alt -F incorrectly specifies Timeline step																				 </li>
+</ul>
+
+
+<ul><u><b><font size="5">Addressed issue</font></b></u>
+	<li>0003476	GameMaker 8.1 educational version won't start without admin privilege															 </li>
+	<li>0003579	install link not working 																										 </li>
+	<li>0003584	I HATE WINDOWS HOW ABOUT SOME LINUX SUPPORT?																					 </li>
+	<li>0003586	Game window appears to lose all graphical data and crash.																		 </li>
+	<li>0003472	Can't upgrade to GM 8.1																											 </li>
+	<li>0003398	Bold courier text overlaps																										 </li>
+	<li>0003366	Don't increment image_index if there are less than 2 images																		 </li>
+	<li>0003368	License stamper does not work																									 </li>
+	<li>0003357	Cursor_sprite is drawn over and over...																							 </li>
+	<li>0001846	Range Check error/Access Violation while adding large tiles in room																 </li>
+	<li>0003290	Depth is not taken into account in the path editor.																				 </li>
+	<li>0003321	Game Maker v8.1.139 games cause BSoD on PC with 2GB AMD HD 6950 DVI																 </li>
+	<li>0003268	Black theme from GMHTML5 option in GM8.1																						 </li>
+	<li>0003264	Only works for administrator																									 </li>
+	<li>0003227	Regression: "No sound device detected, sounds may not play" dialogue box cannot be dismissed.									 </li>
+	<li>0003144	Multiplayer names and chat																										 </li>
+	<li>0003155	Export Group of Scripts... would be better if it could keep the group structure intact											 </li>
+	<li>0003159	Deprecated functions still colored in scripts																					 </li>
+	<li>0003145	it keeps saying that its unable to get stand-alone data																			 </li>
+	<li>0003140	Installed 8.1 Lite on a computer with my login account. A different user can not run Game Maker8.1 Lite							 </li>
+	<li>0001938	Save as PNG strip doesn't allow file rename																						 </li>
+	<li>0003099	draw_sprite passing -1 does not animate the image if the image does not have the same number of frames as sprite_index			 </li>
+	<li>0003089	Features for the savegame action in objects																						 </li>
+	<li>0001805	Save games are still getting corrupted																							 </li>
+	<li>0003087	Runtime error 216 at 00405FE2																									 </li>
+	<li>0003093	Un existing objects error when check before calling																				 </li>
+</ul>
+
+
+
+
+
+
+
+
+
+<h1 id="version-8.1.139">Version 8.1.139</h1>
+<ul><u><b><font size="5">Changes</font></b></u>
+	<li>Updated so GM81 exports from GameMaker:HTML5 can be loaded</li>
+	<li>Texture loading has been rewritten to stop unexpected error problems on older and low end graphics cards</li>
+	<li>Sound issue where repeated message about no sound device has been fixed (only comes up once)</li>
+	<li>If you have no sound at all in the export then Sound is not initialised (even if you have deleted all the sounds)</li>
+	<li>Games written using Lite now start up quicker</li>
+	<li>Added d3d_set_zwriteenable( enable ) function, takes a single parameter that indicates if z writing is on (true) or off (false)</li>
+</ul>
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1718">1718</a> :	Z-Buffer issue with loaded textures</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1779">1779</a> :	Z-buffering (D3DRS_ZWRITEENABLE)</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1916">1916</a> :	Can't change colordepth in game</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1950">1950</a> :	Z buffer issue?</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1904">1904</a> :	Unexpected error when using ini_open on a filename within a non-existing directory</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1717">1717</a> :	ini_open crashes the game if the target directory doesn't exist</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1704">1704</a> :	Zoom shortcuts don't work on number pad</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2993">2993</a> :	The game crashes just when it starts to run</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2867">2867</a> :	Getting error message some times when trying to test the game.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2729">2729</a> :	Error in 'Run the game' </li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2632">2632</a> :	Games will not play</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2493">2493</a> :	the game stops on ''open'' </li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2295">2295</a> :	Game that worked fine in the past crashes upon load with "An unexpected error"</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1991">1991</a> :	"Unexpected error occured when running the game" message posts when launching the game</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1944">1944</a> :	Unexpected error occurred when running the game</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1948">1948</a> :	unexpected errors, not sure how</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2919">2919</a> :	F2 - Code snippet not working.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1757">1757</a> :	Went to test my game when all of a sudden this error popped up</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1758">1758</a> :	Was Placing object into a room when this popped up</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1759">1759</a> :	I do all that work for NOTHING!!!</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1764">1764</a> :	sprites have a problem</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1381">1381</a> :	sprite_assign, sprite_add and etc resource crashes</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1338">1338</a> :	3d crashes when using models</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1040">1040</a> :	i try to run my game and it say an unexpected error has occured, it was working fine befor but then this started happening and i</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1875">1875</a> :	Inactive window freezing up AND unknown compilation error.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1864">1864</a> :	Trace.log</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1830">1830</a> :	Unicode drawing?</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1751">1751</a> :	Game Maker 8.1 becomes "Not Responsive" when attempting to run (test) or create standalone exe</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1783">1783</a> :	game failed to run issue...</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1789">1789</a> :	"No sound device detected, sounds may not play" dialogue box cannot be dismissed.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0930">0930</a> :	file_text_write_string writes some characters as '?'</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1252">1252</a> :	Gamemaker 8.1 Lite Crash on startup</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1689">1689</a> :	"unexpected error" repeatedly	 	</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1723">1723</a> :	Room Data Corrupted</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1130">1130</a> :	Unexpected Error</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1665">1665</a> :	Crash when running executable</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1709">1709</a> :	Make the Define Constants window resizable</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1400">1400</a> :	Negative array index in a script does not throw an error</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1247">1247</a> :	Game maker 8.1.91 stops working completely with some game maker 8 games during compiling</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1321">1321</a> :	Code snippets doesn't work with F2. (Rerported)</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1031">1031</a> :	'Freeze the game when the form loses focus' should say 'window' instead</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1115">1115</a> :	Glitch in draw_text with negative coordinates</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1198">1198</a> :	Scaling Fonts using draw_text_transformed is glitchy</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2710">2710</a> :	Inaccuracurate object and tile placement above room boundary in room editor</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2752">2752</a> :	Error "an unexpected error has occurred when running the game" whenever I put in an object with a certain command.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1947">1947</a> :	No Scroll bar in Object editor</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1899">1899</a> :	Background color rectangle do not shift when moving view in path editor</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2601">2601</a> :	cannot update 8.0 Pro to 8.1</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1903">1903</a> :	"No sound device detected. Sounds may not play." shows up in dialog box and will not continue to the game</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1923">1923</a> :	Loading time increased for no reason</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1663">1663</a> :	GM initialises sound loading when sounds aren't present</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1906">1906</a> :	GM LITE has 3-4 seconds delayed load times</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1733">1733</a> :	When cropping, maintain original origin</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1873">1873</a> :	Game crashes when you leave it running.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1866">1866</a> :	Game crashes when unfocused</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1811">1811</a> :	Freeze the game when the form loses focus causes crash</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1844">1844</a> :	Game window becomes idle when using Chrome</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1833">1833</a> :	Several problems when game window is idle/unfocused</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1824">1824</a> :	Game Window lost focus every 10 seconds</li>
+</ul>
+
+<ul><u><b><font size="5">Addressed issue</font></b></u>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1611">1611</a> :	View offset</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1217">1217</a> :	Glitchy export of png sprites</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1808">1808</a> :	Thread Error: Access is denied (5)</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1502">1502</a> :	GameMaker 8.1 Pro does not work</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1860">1860</a> :	snapshot action vs. F9</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1853">1853</a> :	I clicked to play one of my sounds and GameMaker FROZE.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1763">1763</a> :	Went into testplay and suddenly these errors popped up.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1922">1922</a> :	Cyrillic</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1840">1840</a> :	Wish: debugger option to show amount of part_systems, surfaces, mp_grids etc.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1837">1837</a> :	Game Maker will not compile Lego Skeleton Fever when font anti aliasing is set to 3</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1829">1829</a> :	Dropper tool for tilesets in room editor</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1832">1832</a> :	Make a seperate menu option for 'Export All Scripts' and 'Export Selected Script/Group'</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1778">1778</a> :	Default size option for objects placed in room</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1780">1780</a> :	It would be nice if the "Search in scripts" function included the contents of the Execute Script DND action.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1796">1796</a> :	splash_set_keyboard_key(key) to assign specific keys to skip a splash screen</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1794">1794</a> :	splash_set_stop_button(button) to stop a splash screen by pressing a joystick button</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1790">1790</a> :	Lab install - Domain users</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1777">1777</a> :	'Bring To Front' & 'Send To Back' functions not working in room editor</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1742">1742</a> :	it won't update!!!!!!</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1738">1738</a> :	[Wish] Autoload debug watch list</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1736">1736</a> :	Update Caused Bug</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1735">1735</a> :	Not opening</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1737">1737</a> :	Create backup files with an autosave feature?</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1724">1724</a> :	Cannot "Ignore" secure mode error when using an Extension with "Initialization"</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1722">1722</a> :	Bulk install extension packages</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1714">1714</a> :	Multi import in Include Files</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1713">1713</a> :	Double click, or click to delete?</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1711">1711</a> :	Same importing options as sprites.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1705">1705</a> :	Action tabs have a strange/inconsistent appearance</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1703">1703</a> :	Code to set "Clear Background with Window Colour"</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1672">1672</a> :	Visual glitch in Code Editor for Execute a Piece of code drag and drop</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1633">1633</a> :	Script editor glitch with Japanese text</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1695">1695</a> :	Keyboard does not update correctly after room transition</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1692">1692</a> :	Crash on sprite editor close</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1687">1687</a> :	It would be so much more convenient if while opening the pop up scroll list of objects you could use the middle mouse button to</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1686">1686</a> :	Code completion does not update when typing</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1610">1610</a> :	Add group option</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1681">1681</a> :	Game Maker keeps popping up!</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1650">1650</a> :	After a game made with GM8.1.124 crashed, the runner to GameMaker was lost.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1667">1667</a> :	Zooming and panning in the Tile Viewer when using tileset.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1648">1648</a> :	Pictures won't display in news window.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1635">1635</a> :	Room Editor maximized upon opening</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1625">1625</a> :	Links in the Game Maker news do not open in the default browser.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1623">1623</a> :	globalvar error_display</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1613">1613</a> :	Not respnding</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1624">1624</a> :	GameMaker 8.1 Lite Fails to load </li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1485">1485</a> :	string_md5 to hash a string into md5</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1591">1591</a> :	Infinite Game Makers open!</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1599">1599</a> :	string upper with Greek 'sigma' in word final position</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1598">1598</a> :	Visual indicator of the room?s size in the room editor</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1582">1582</a> :	Ability to rearange events in an object window</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1580">1580</a> :	Rename button isn't working after pressing CTRL+S</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1569">1569</a> :	Division by zero not catchable as normal error</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1551">1551</a> :	When I exit my game, GM doesn't come up.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1537">1537</a> :	when i starting up the program, and plays the game, it takes too long time.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1456">1456</a> :	extension_exists to check if extension is installed</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1454">1454</a> :	window_minimize function to minimize game window</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1449">1449</a> :	Delete temp files automatically</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1446">1446</a> :	GM lag during Export Resources and Saving</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1399">1399</a> :	Wish: Pressing F12 when cursor is on a function name in code editor, opens relevant manual page</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0868">0868</a> :	Game Maker crashes when a project is opened and the Updater tries to update</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0690">0690</a> :	Windows 7 "Recently Opened" for GM8.1 includes non-editable files GM opened</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1528">1528</a> :	file_text_read_real() dosn't work on UTF-8 files.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1525">1525</a> :	After using the File_Delete function the File_Open_Write and File_Open_Read stop working</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1270">1270</a> :	Sometimes rename of groups wan't work</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1326">1326</a> :	string error using mplay_data_write and mplay_data_read persists after .107</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1048">1048</a> :	Multiplayer GM8.1		</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2746">2746</a> :	Upon starting GameMaker, computer crashes		</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1388">1388</a> :	Game Maker opens instances infinitely when updater is firewalled?</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1327">1327</a> :	GM 8.1 doesn?t read correctly special characters</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1368">1368</a> :	mplay_data_write(,) and mplay_data_read(,) don't work 100% of the time. </li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1369">1369</a> :	new multy player over the net </li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1347">1347</a> :	Add new functions to File_text</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1343">1343</a> :	My hard drive suddenly disappears?</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1296">1296</a> :	Script Editor doesn't restore correctly if previously maximized</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1092">1092</a> :	An object's create event is not called if a previously added object skips rooms</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1024">1024</a> :	New GM Update causes random crashes I have no idea why</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1205">1205</a> :	sprite editor sleep off game maker</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1101">1101</a> :	Error message</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1104">1104</a> :	Wish: Better options to control sound</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1068">1068</a> :	Game Maker often does not close completely; can still be found in task manager.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1203">1203</a> :	Tip - It would be better if it had a picture showing the shadow of the previous sprite</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0980">0980</a> :	Scripts doesn't recognize instantly new names.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0988">0988</a> :	loading saved games through game_load() or default F6 doesnt work at certain times.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1015">1015</a> :	Can't run games via F5 / green "Run" arrow</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1017">1017</a> :	External model incorrectly rendered.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1030">1030</a> :	window_get_focus to retrieve if game window is in focus or not</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1032">1032</a> :	sprite_set_alpha_from_sprite doesn't work with already transparent sprites</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1046">1046</a> :	8.1.91</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1056">1056</a> :	current_step</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1063">1063</a> :	Ability to access debug information</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1064">1064</a> :	Custom font sprite opacity value not working</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1075">1075</a> :	Duplicate in rooms</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1084">1084</a> :	unable to open</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1094">1094</a> :	Sound does not play randomly</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1096">1096</a> :	Support for .mov & .bik video files!</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1199">1199</a> :	Cannot run the game</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1208">1208</a> :	Return values for event_*</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1241">1241</a> :	WindowsXP change user error</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0875">0875</a> :	TAB key in Event Window</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1043">1043</a> :	Workspace windows always open 'floating'</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0956">0956</a> :	Another value for "self" please...</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0886">0886</a> :	Sprite resizing issue</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0877">0877</a> :	TAB key works only in keyboard_check_direct</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0865">0865</a> :	Ability to change Game Maker IDE background</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0849">0849</a> :	Change Default "Game Maker News" window size</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=0845">0845</a> :	Option to hide the Loading image completely</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=3029">3029</a> :	Access violation at address 7216AC38 in module 'comctl32.all'.Read of address 4589FB71.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=3011">3011</a> :	After installation Game maker 8.1 is not running with limited privileges</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2956">2956</a> :	Triggers Bugged</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2854">2854</a> :	word wrap for the Code Editor</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2962">2962</a> :	Hovering over a constant in the code editor should display its value	Upon starting GameMaker, computer crashes</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2917">2917</a> :	How to upgrade to 8.1</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2894">2894</a> :	Room editor could use a quick preview</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2893">2893</a> :	Change all graphics to black and white contrast automatically</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2892">2892</a> :	Exporting and Importing</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2890">2890</a> :	I have bought Game Maker 8.0 Pro but I cannot upgrade to 8.1</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2772">2772</a> :	Xbox 360 controller Z-axis</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1975">1975</a> :	Updater crashing</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2865">2865</a> :	Sound files and audio files are duplicated when renamed</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2871">2871</a> :	Sound Channels for the future of GM</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2869">2869</a> :	Allow for Events to be organized by the Order of Events</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2853">2853</a> :	bm_subtract actually not subtracting</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2773">2773</a> :	When dir contains space, file don't open on double click</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2715">2715</a> :	when go to buy software</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2706">2706</a> :	Game Maker Re-Install </li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2676">2676</a> :	Game window gets unresponsive when using show_message when window is on top</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2656">2656</a> :	passing a string to instance_create crashes the game</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2581">2581</a> :	Ctrl + Backspace Symbol</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2451">2451</a> :	Graphics function draw_sprite_ext() is not listed in Game Maker Help as a Standard-only function</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2417">2417</a> :	"Ignore unsupported functions" in Errors tab</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2328">2328</a> :	I can't upgrade to 8.1</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2315">2315</a> :	Return "Goto Line" feature to the Code Editor</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2238">2238</a> :	an easier code to open a browser</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2253">2253</a> :	Allow option to turn off Smooth Scrolling in code editor</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2770">2770</a> :	ord() function not working</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2761">2761</a> :	text files not creating</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2764">2764</a> :	Once installed on a new computer WINDOUS 7 (when you start any project) Throws an error</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2621">2621</a> :	Game messes up when it is set up to run on resume from standby.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2663">2663</a> :	I can't test the game!!!!!! WHAT HAPPENED!!!!!!</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2748">2748</a> :	Use webkit instead of IE control to display web content</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2745">2745</a> :	Upgrading from GM7</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2197">2197</a> :	draw_set_halign(fa_center)</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2196">2196</a> :	Healthbars don't work properly.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2195">2195</a> :	"Precise" bouncing does not work(D&D).</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2177">2177</a> :	failed to replace the icon message.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1946">1946</a> :	GameMaker F5 runner slower.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2020">2020</a> :	Runtime Errror</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2000">2000</a> :	fail to run game.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1999">1999</a> :	Mode in the room to VIEW text that objects draw(in-game)</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1983">1983</a> :	Problem with align with grid</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1988">1988</a> :	unexpected error when running the game message</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1987">1987</a> :	fatal error when i use models in the game</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1986">1986</a> :	crashes when i click a script with d3ds inside.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1984">1984</a> :	Save on delete</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1969">1969</a> :	Tiles in the room editor assign depth based on x and y positions rather than order of creation.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1976">1976</a> :	i want my money back</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1974">1974</a> :	Don't freeze the window while dragging	 	</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1954">1954</a> :	Search for resources</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1970">1970</a> :	8.1.135 still crashes when unfocused</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1966">1966</a> :	Error defining an external function</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1958">1958</a> :	unexpected errors when edit sprite</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1932">1932</a> :	Error upon exiting game. Caused simply by having three objects in the project.</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1925">1925</a> :	Crop function on the toolbar</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1898">1898</a> :	Error message: "Exception EInoutError in the Data Module"...</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1926">1926</a> :	When I load up a game maker 8.1 file ERROR!?!</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1919">1919</a> :	Cant click to change name after ALT+TAB</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1964">1964</a> :	file_text_write_real() adds a <space></li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=2438">2438</a> :	choose() more arguments</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1951">1951</a> :	Confused "var" logic</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1940">1940</a> :	Proper 8bit PNG support through sprite_add() without removeback</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1880">1880</a> :	Game window flickering</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1887">1887</a> :	ls_* native 2D lighting system in GM</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1818">1818</a> :	"Error Creating Stand-Alone: Cannot find valid runner data." message while compiling</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1817">1817</a> :	Charsets not working</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1809">1809</a> :	blend modes (include ext) make fat sprite</li>
+	<li><a href="/web/20160814092311/http://bugs.yoyogames.com/view.php?id=1807">1807</a> :	Game Goes Unresponsive When Left Out of Focus</li>
+</ul>
+
+
+<h1 id="version-8.1.135">Version 8.1.135</h1>
+<ul><u><b><font size="5">Changes</font></b></u>
+	<li>Updater now explicitly checks for potential Softwrap license</li>
+</ul>
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>0001531	:	Access violation at address 005A6D79 in module 'Game_Maker.exe'. Read of address 8DB264D4.</li>
+</ul>
+
+<ul><u><b><font size="5">Addressed issue</font></b></u>
+	<li>0001800	:	Holding Another Window Causes Crash, And Flashing/Glitching</li>
+	<li>0001798	:	During Test Play - Screen flickers every 15 to 20 seconds, games pauses for 2 seconds</li>
+</ul>
+
+<h1 id="version-8.1.132">Version 8.1.132</h1>
+<ul><u><b><font size="5">Changes</font></b></u>
+	<li>Mostly bug fixing - but we did find a Memory Leak in the room editor that has lots of knock on issues, this one should be a lot more stable</li>
+</ul>
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>0001741	:	Maintain origin in Crop Image too</li>
+	<li>0001691	:	I was placing a tile in a room and Gamemaker stopped responding.</li>
+	<li>0001755	:	Error while I was dragging the view around in my room</li>
+	<li>0001683	:	I tried to add another object and It said "Not enough storage to proccess this command."</li>
+	<li>0001698	:	Show object information isn't showing everything</li>
+	<li>0001754	:	After update GM8.1 files do not run!</li>
+	<li>0001762	:	Wrong file version...</li>
+	<li>0001787	:	or1 instead of color1</li>
+	<li>0001784	:	The side-by-side configuration is incorrect</li>
+	<li>0001786	:	Auto completion screws the code as i write</li>
+	<li>0001780	:	It would be nice if the "Search in scripts" function included the contents of the Execute Script DND action.</li>
+	<li>0001782	:	Severe Memory Leak</li>
+	<li>0001776	:	Script editor issues :)</li>
+</ul>
+
+<ul><u><b><font size="5">Addressed issue</font></b></u>
+	<li>0001710	:	Mini-map does not update to new room sizes.</li>
+	<li>0001785	:	SAVE GAMES ARE GETTING CORRUPTED MORE OFTEN!!</li>
+</ul>
+
+<h1 id="version-8.1.131">Version 8.1.131</h1>
+<ul><u><b><font size="5">Changes</font></b></u>
+	<li>Added more detailed Trace info to the runner - when textures are made.</li>
+	<li>Fixed resizing of the Mini Map (should now always show the whole level)</li>
+</ul>
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>0001739	:	Tiles and objects turn invisible.</li>
+</ul>
+
+<ul><u><b><font size="5">Addressed issue</font></b></u>
+	<li>0001741	:	Maintain origin in Crop Image too</li>
+</ul>
+
+<h1 id="version-8.1.129">Version 8.1.129</h1>
+<ul><u><b><font size="5">Changes</font></b></u>
+	<li>Added a new option to show the Trace.log file after Debug has been run</li>
+	<li>Added an option to maintain the origin when resizing and cropping sprites</li>
+</ul>
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>0001733	:	When cropping, maintain original origin</li>
+	<li>0001734	:	Access violation at address 006525DA in module... - when opening room</li>
+</ul>
+
+<ul><u><b><font size="5">Addressed issue</font></b></u>
+</ul>
+
+<h1 id="version-8.1.126">Version 8.1.126</h1>
+<ul><u><b><font size="5">Changes</font></b></u>
+	<li>Mainly bug fixes from previous release</li>
+</ul>
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>0001696	:	When dragging objects in the room editor they disappear</li>
+	<li>0001693	:	Room resize issue</li>
+	<li>0001684	:	When closing mini map view in room completely, it has an error that it can't divide by 0.</li>
+	<li>0001682	:	Typo in GameMaker Help</li>
+	<li>0001657	:	Show values in Colorize and Colorize Partial in Sprite Editor</li>
+	<li>0001672	:	Visual glitch in Code Editor for Execute a Piece of code drag and drop</li>
+	<li>0001678	:	Duplicated rooms tile/objects not shown in editor at first</li>
+	<li>0001675	:	Press C to highlight objects with Creation Code in Simple mode</li>
+	<li>0001670	:	Cannot drag any action in drag and drop!</li>
+	<li>0001668	:	string_delete conunt wrongly "odd" charachters</li>
+	<li>0001660	:	Object depth assignments not working properly</li>
+	<li>0001659	:	Objects are not visible while dragged through the room</li>
+	<li>0001646	:	8.1.124 Cannot reorder actions</li>
+	<li>0001647	:	Room editor: "floating point division by zero"</li>
+	<li>0001643	:	Objects in rooms become invisible when changing room size</li>
+	<li>0001641	:	Floating point error on reducing the minimap in room editor.</li>
+	<li>0001640	:	Creation Code Tooltips Don't Change when you hover over a different object that has code</li>
+	<li>0001637	:	when deleting objects from the resource tree that are in a room will cause an access violation when entering the room editor</li>
+</ul>
+
+<ul><u><b><font size="5">Addressed issue</font></b></u>
+	<li>0001673	:	Make double click add a Execute a piece of Code drag and drop action</li>
+</ul>
+
+<h1 id="version-8.1.125">Version 8.1.125</h1>
+<ul><u><b><font size="5">Changes</font></b></u>
+	<li>Added some more viewing options to the Room Editor - you can now hide invisible objects (and objects with no sprites)</li>
+	<li>While I have not removed Creation Code (as that is silly) - I have tidied up how it is handled (now deleted if empty..
+		NOTE CR/LF do not count as empty, only spaces and tabs) and you now get a tooltip with the first part of the creation code
+		displayed when you hover the mouse over the instance (this can be switched off in the view options).</li>
+	<li>As an added extra to make the Creation Code even more obvious, if you hold the 'C' key down then any objects with creation code will be highlighted in Red</li>
+	<li>A new option has been added to Views on the Room Editor as well - you can now enable and disable the clearing of the background of the view,
+		it defaults to on (the current default) but you can now disable it, this will speed up the runner if you do. To get a similar effect to the old way
+		(i.e. clear the area between views) then just add an empty room between rooms that is cleared to the correct colour.</li>
+	<li>And it's not all Room Editor love - the Object editor now gets a splitter between the Actions and the Events windows
+		allowing you to resize the windows left to right - giving the Actions window a bit more screenspace (if required)</li>
+</ul>
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>0001629	:	background_showcolor is not working</li>
+	<li>0001497	:	Wider Events List</li>
+	<li>0001616	:	Proper Indication for Objects that have Creation Code inside Room Editor</li>
+	<li>0001622	:	unexpected errors randomly appears when I edit my game </li>
+	<li>0001631	:	Objects outside of room boundaries are no longer visible in Room Editor</li>
+	<li>0001349	:	Pressing TAB in script name input not going into code editor</li>
+	<li>0001617	:	when creating a room an error is displayed in a button box and room is un-editable</li>
+	<li>0001604	:	Only half of minimap when height > width</li>
+	<li>0001600	:	Option to show/not show invisible objects in the room editor</li>
+	<li>0001581	:	Ok button for timelines out of place</li>
+	<li>0001596	:	Backgrounds tab in room editor is default, should be objects?</li>
+	<li>0001618	:	Typo in help file under Emitters</li>
+	<li>0001603	:	Minimap view in room editor constantly flashes white while making any changes in the room</li>
+	<li>0001597	:	Room editor object and mini map issues with large room sizes</li>
+	<li>0001546	:	After finishing editing sprites, Gamemaker stops working</li>
+	<li>0001570	:	unexpected error appeared by sprite issue</li>
+	<li>0001609	:	Room will not load when opened and grid doesnt show...and some other things... detailed report with files..</li>
+</ul>
+
+<ul><u><b><font size="5">Addressed issue</font></b></u>
+	<li>0001628	:	Texture mapping differences between 8.0 and 8,1</li>
+	<li>0001627	:	too many updates</li>
+	<li>0001626	:	cant open a gmk file up directly from file</li>
+	<li>0001559	:	Remove 'Creation code' for objects in the Room Editor</li>
+	<li>0001447	:	GM 8.1 does not start / Windows Vista Home Premium SP2 32-bit</li>
+</ul>
+
+<h1 id="version-8.1.123">Version 8.1.123</h1>
+<ul><u><b><font size="5">Changes</font></b></u>
+</ul>
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>0001589	:	Bug when writing a code</li>
+	<li>0001590	:	Several errors when in room editor.</li>
+	<li>0001587	:	Many, many errors in new room editor,</li>
+	<li>0001588	:	Invalid floating point operation upon opening room editor</li>
+	<li>Fixed an issue with offsets on backgrounds - had not been reported yet</li>
+</ul>
+
+<ul><u><b><font size="5">Addressed issue</font></b></u>
+</ul>
+
+<h1 id="version-8.1.120">Version 8.1.120</h1>
+<ul><u><b><font size="5">Changes</font></b></u>
+	<li>Added Beta and Stable channel options - you can choose if you install from the installer - from this version onwards we will have 2 channles for updating - we will promote a version to stable once we have had at least a week of no major bug reports</li>
+	<li>Added links to the exe installer in the release notes - just click on the link in the header for that version</li>
+	<li>Speeded up the Download for updater - you need to install from the installer though to feel the benefit (on the next update)</li>
+</ul>
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>0001576	:   Spelling mistakes in help file</li>
+	<li>0001507	:	Pictures included: "Access Violation Errror at address 005A271A in module 'Game_Maker.exe'. Read address of 00000008."</li>
+	<li>0001508	:	Invalid pointer operation</li>
+	<li>0001402	:	Access Violation, after changing game icon.</li>
+	<li>0001356	:	Latin symbols can't be showed and text drawn adds a character at the end</li>
+	<li>0001307	:	Preferences tool-tip glitch</li>
+	<li>0001103	:	The tooltips for textbox in the Scripts tab of the preferences dialog are wrong</li>
+	<li>0001055	:	Rooms: Undo doesn't work after using Ctrl+Right click to delete!</li>
+	<li>0001112	:	Access violation at address005a4520 in module 'game-maker.exe'. Read of address 075e0000.</li>
+	<li>0001143	:	d3d_transform_stack_push() 4mi</li>
+	<li>0001213	:	Wish: store the text entered in font dialogs</li>
+	<li>0001236	:	Text input description in Preferences (GM 8.1)</li>
+	<li>0001016	:	Request: Updater minimizes to system tray</li>
+	<li>0001453	:	Glitch in code editor toolbar</li>
+	<li>0001421	:	string_lenght make mistake counting special character like "?"</li>
+	<li>0001469	:	Russian texts</li>
+	<li>0001492	:	High lag in room editor</li>
+	<li>0001523	:	Use a minimap for navigation</li>
+	<li>0001526	:	Zoom shortcuts: ctrl +, ctrl -, ctrl 0</li>
+	<li>0001524	:	Wrong background display in rooms!</li>
+	<li>0001521	:	Add an ability to return scrollbars to rooms!</li>
+	<li>0001457	:	Access Violation at address 00685815</li>
+	<li>0001458	:	Release notes link in Help menu</li>
+	<li>0001248 :	Access Violation when zooming out in the room editor.</li>
+	<li>0001113 :	Access violation error when zooming in sprite editor </li>
+</ul>
+
+<ul><u><b><font size="5">Addressed issue</font></b></u>
+	<li>0001489	:	Make transparent sprites</li>
+	<li>0001520	:	Draw event occurs before create event</li>
+	<li>0001509	:	Import Photoshop format</li>
+	<li>0001496	:	no scrollbar in room editor</li>
+	<li>0001053	:	News screen on GM redirects to explorer and not the default browser.</li>
+	<li>0001387	:	Game Maker launches Internet Explorer from News, even when not default browser</li>
+	<li>0001579	:	No scrollbar in room editor</li>
+	<li>0001340 :	Installing extensions does not extract help file</li>
+</ul>
+
+<h1 id="version-8.1.113">Version 8.1.113 (stable)</h1>
+<ul><u><b><font size="5">Changes</font></b></u>
+	Fixed 2 bugs with INI files not being created and with Tiles not being rendered correctly in the Room Editor.
+</ul>
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+</ul>
+
+<ul><u><b><font size="5">Addressed issue</font></b></u>
+</ul>
+
+<h1 id="version-8.1.111">Version 8.1.111</h1>
+<ul><u><b><font size="5">Changes</font></b></u>
+	Room Editor has been changed the Scrollbars have been removed and you now navigate holding down the Middle mouse button and moving the mouse (or holding Space bar+Left Mouse Button and moving the mouse).
+</ul>
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>001398: 8.1.110 "INI files must be located in the same directory as the program"</li>
+	<li>001476: If there is any error in a script, it bombs out rather than report an error</li>
+	<li>001376: Pixels hidden behind scroll bars in image editor.</li>
+	<li>000769: NORMAL Grid becomes unaligned</li>
+	<li>000937: ROOMS: Isometric grid - 2 display errors</li>
+	<li>001390: Bugged Display of Grid</li>
+	<li>001311: Undeclared variables exiting code without throwing an error</li>
+	<li>000896: Debug tool / Debugger not responding to keyboard shortcuts</li>
+	<li>001421: string_lenght make mistake counting special character like "?"</li>
+	<li>001372: Ctrl+E does not work</li>
+</ul>
+
+<ul><u><b><font size="5">Addressed issue</font></b></u>
+	<li>001468: russian text not worked in show_message</li>
+	<li>001455: Improved string manipulation functions</li>
+	<li>001455: Can't find the update window button</li>
+</ul>
+
+
+<h1 id="version-8.1.110">Version 8.1.110</h1>
+<ul><u><b><font size="5">Changes</font></b></u>
+	see bug fixes and addressed issues.
+</ul>
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>001371: string_char_at returns nothing</li>
+	<li>001385: string_char_at</li>
+	<li>001383: string_char_at(str,index) This function fails to return the last character in string when using GML8.1</li>
+	<li>001373: Please make the UpdateReady window NOT always on top.</li>
+	<li>001380: Text Wrapping doesn't work for game information.</li>
+	<li>001374: Extension's Help File ain't launching.</li>
+</ul>
+
+<ul><u><b><font size="5">Addressed issue</font></b></u>
+	<li>001379: Malformed released notes (8.1.109).</li>
+	<li>001391: CPU usage tops out when scrolling.</li>
+</ul>
+
+<h1 id="version-8.1.109">Version 8.1.109</h1>
+<ul><u><b><font size="5">Changes</font></b></u>
+	<li>Sleep function has been modified to use the Win32 Sleep function rather than WaitForSingleObject, I am not anticipating any knock-ons but may fix the FPS issues some have been seeing.</li>
+</ul>
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>0001370: string_char_at causes crash if passed real value instead of string.</li>
+	<li>0001366: 8.1.108 file_copy does not work.</li>
+	<li>0001355: string_char_at causes crash.</li>
+	<li>0001351: All text drawn adds a character at the end.</li>
+</ul>
+
+<ul><u><b><font size="5">Addressed issue</font></b></u>
+	<li>0001305: Empty room causes fps drop.</li>
+	<li>0001350: FPS problems when sounds folder is empty.</li>
+	<li>0001357: Pressing control and s does not save the game.</li>
+	<li>0001354: Update download much slower than site download</li>
+</ul>
+
+<h1 id="version-8.1.108">Version 8.1.108</h1>
+<ul><u><b><font size="5">Changes</font></b></u>
+	<li><b>string_byte_length()</b> function has been added to help cope with the new string formats. returns the number of bytes in a string (not the number of characters, the number of bytes).</li>
+	<li><b>string_byte_at()</b> also added for new string format. returns the byte value (it is a number) at a byte position in a string.</li>
+	<li>Removed the restriction that INI files have to be in the same directory as the executable - they can now be anywhere.</li>
+</ul>
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>0001319: Unable to save ini files after 8.1 update. </li>
+	<li>0001336: Character encoding problems - 8.1.107. </li>
+	<li>0001335: INI files aren't created. </li>
+	<li>0001345: String can't show latin symbols. </li>
+	<li>0001330: INI File Writing Delay. </li>
+	<li>0001332: Game maker dose not write ini file to same folder that the exe is in.. </li>
+	<li>0001331: ini files did not work in GM 8.1.107. </li>
+	<li>0001328: Errors with string scripts. </li>
+	<li>0000857: updater crashes gamemaker when asking to save @ closing. </li>
+	<li>0001041: Remove the INI file must be stored in the same folder as the game - limit. </li>
+	<li>0000992: Minimised updater don't responses when update is ready. </li>
+	<li>0001300: Russion font. </li>
+	<li>0001327: GM 8.1 doesn?t read correctly special characters. </li>
+</ul>
+
+<ul><u><b><font size="5">Addressed issue</font></b></u>
+	<li>0001337: Can't find new installed fonts. </li>
+	<li>0001346: Check for updates button. </li>
+</ul>
+
+<h1 id="version-8.1.107">Version 8.1.107</h1>
+
+<ul><u><b><font size="5">Changes</font></b></u>
+	<li><b>ansi_char()</b> function has been added to help cope with the new string formats. Please use with care. </li>
+	<li><b>get_function_address()</b> function has been added to help with external DLLs calling into GameMaker.</li>
+</ul>
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>0001289: Only 0 - 127 characters are exported with font. </li>
+	<li>0000930: file_text_write_string writes some characters as '?' </li>
+	<li>0001292: Ini files no longer supported </li>
+	<li>0001293: Opening GM81-files results in error message </li>
+	<li>0001291: Message shows up when I double-click .gm81 files, then GM closes silently </li>
+	<li>0001299: game maker stopped writing to ini file </li>
+	<li>0001294: INI Files no longer write/read </li>
+	<li>0001295: string error using mplay_data_write and mplay_data_read </li>
+	<li>0001021: Reading and writing Ini files breaks with YYG Windows Dialog Extension </li>
+	<li>0001317: INI Files/New Update </li>
+	<li>0001304: Tiles and other "sliced" graphics now have ugly cracks. </li>
+	<li>0001298: Tiled background has lines </li>
+	<li>0001216: In-game Tile Spacing Bug (like room editor bug)      (again)</li>
+</ul>
+
+<ul><u><b><font size="5">Addressed issue</font></b></u>
+	<li>0001286: Unable to open .gm81 files by double-clicking</li>
+	<li>0001288: upgrading from 8.1.91 to 8.1.106 failure </li>
+	<li>0001290: CJK characters won't draw, even with CJK-enabled fonts </li>
+	<li>0001297: Improved script editor (collapse-able, hide-able code, regions, etc) </li>
+	<li>0001285: Setting to JOHAB_CHARSET gives licence email </li>
+	<li>0001301: Exception EOSError in module </li>
+	<li>0001310: Suspected error reporting bug ? </li>
+	<li>0001303: Bullet size and line spacing in game information editor bug. </li>
+</ul>
+
+
+<h1 id="version-8.1.106">Version 8.1.106</h1>
+
+<ul><u><b><font size="5">Changes</font></b></u>
+	<li><b>PLEASE NOTE:</b> The Code Editor is now full unicode, however... this means that you <b><i>WILL</i></b> have to re-enter all your strings in order for them to work. This is because we have no
+		idea what codepage they originally came from, so cannot patch up characters >127 into the correct unicode space. You can cut and paste them so that windows does this, but it's still going to be
+		painful. Sorry....</li>
+	<li>Tracing has been added to both the runner and GameMaker. You can enable this with "--YYTrace" on the command line, or set the environment variable "YYLOG_TRACE=1". A "trace.log" file will appear next to the executable.
+		if this is in a restricted folder, you may have to run the .EXE as administrator.</li>
+	<li>GMTV logo has been updated to render also on <b>screen_refresh()</b>.</li>
+	<li>If there are NO sound (mp3,wav etc.) resources included in the program, the audio subsystem will not initialise. This will allow for faster turn around on testing. If you load sounds later during the game, Audio
+		will then initialise at that point, causing a STALL in your application,  so use with care.</li>
+</ul>
+
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>0000891: DLLs won't work with GM8.1</li>
+	<li>0000912: DLL doesn't work</li>
+	<li>0000867: Many extensions no longer work in 8.1</li>
+	<li>0001215: Using multiple string arguments for DLL functions</li>
+	<li>0001242: Sprite_collision_mask does not work</li>
+	<li>0001243: DLL issue in 8.1 that does not occur in version 8.0</li>
+	<li>0001204: Assigning value to argument_count = crash</li>
+	<li>0001218: d3d_model_clear() does not clear 3d model</li>
+	<li>0001029: Make "sleep()" actually sleep</li>
+	<li>0001140: Always got I/O Error 1784 </li>
+	<li>0001089: IO Error 1704 at Start-up (GM8.1.91)</li>
+	<li>0001249: Upon Start Up I recieve an IO error 1784 </li>
+	<li>0001028: Game maker will not stop updating. </li>
+	<li>0001079: Import scripts from .gml files: newlines are broken. Creates nasty problems with extensions.</li>
+	<li>0000760: Control+Space for auto completion no longer works correctly </li>
+	<li>0000991: Long Excute Code pop-up preview windows cause Game Maker to slow down</li>
+	<li>0001204: Assigning value to argument_count = crash </li>
+	<li>0001047: Error</li>
+	<li>0001129: argument_count is always 0 in script with arbitrary number of arguments</li>
+	<li>0000930: file_text_write_string writes some characters as '?'</li>
+	<li>0001076: Delete all is either unclear or unclear </li>
+	<li>0001110: Secure mode doesn't work with gamemaker 8.1.91</li>
+	<li>0001216: In-game Tile Spacing Bug (like room editor bug)</li>
+	<li>0000730: Room editor zoom in/out will render visual glitches between tiles</li>
+	<li>0000764: Isometric zoomed in panning problem</li>
+	<li>0000866: keywords coloring issue in GM version 8.1.71</li>
+	<li>0000843: Objects do not shift when moving view in path editor</li>
+	<li>0001018: Renaming resources </li>
+	<li>0001264: Right-click -> rename object searches for a resource.</li>
+	<li>0001261: Function "external_call" and/or "external_define" doesn't work. </li>
+	<li>0000774: Access violation if action is not found in .lib's </li>
+	<li>0001270: Sometimes rename of groups wan't work </li>
+	<li>0000725: Importing Game Maker 8.0 projects into GameMaker 8.1 ( Draw_Text )</li>
+	<li>0000957: Search in Scripts &gt Other Event - events like room end etc. are listed as "other"</li>
+	<li>0000814: Find resource instead of rename </li>
+	<li>0000741: No support for russion language in code editor </li>
+	<li>0000879: Argument errors. Still bugged. No error, script is aborted! </li>
+	<li>0000878: Code completion glitch </li>
+	<li>0000826: "Unexpected error occured when running the game" </li>
+	<li>0000828: Extensions do not define argument[n] in GML </li>
+	<li>0000836: Unsupported diacritic</li>
+	<li>0000740: Russian Fonts in Game Maker 8.1 </li>
+	<li>0000748: Search in Scripts: search results for text in objects report incomplete event information </li>
+	<li>0000899: View window does not move when panning in room editor </li>
+	<li>0000756: Script search: event name not selective enough. I.e. Global left press event is called Mouse </li>
+	<li>0000734: Character Sets doesn't work properly?</li>
+	<li>0000856: script_execute does NOT do the argument checking </li>
+	<li>0000788: New GM does not display Cyrillic characters, at all. Even in the script editor. </li>
+	<li>0000837: List index out of bounds (7) </li>
+	<li>0000842: Check if another instance of the game is running</li>
+</ul>
+
+<ul><u><b><font size="5">Addressed issue</font></b></u>
+	<li>0000897: Error in mod with large numbers</li>
+	<li>0001246: Collision with solid object cancels speed actions or any other ones.</li>
+	<li>0001164: draw_getpixel() will not return c_blue when in 3d mode</li>
+	<li>0001165: Can't access some fonts</li>
+	<li>0001111: Joystick press and release functions </li>
+	<li>0001091: Whenever I try to load the game I am working on, it freezes halfway through loading and I have to ctrl-alt-del to close it. </li>
+	<li>0001109: Gray color has a large layer in the image editor (SINCE GM 7.0!!) </li>
+	<li>0001042: Major 3D texture bug.</li>
+	<li>0001044: Surfaces seem to disappear after a "Run as administartor" dialog appears</li>
+	<li>0001074: Multi-select in Rooms</li>
+	<li>0001081: glitch with repeating textures</li>
+	<li>0001057: some keyboard events only occur once</li>
+	<li>0001098: Install by admin does not appear for other users</li>
+	<li>0001067: Game Maker Crashes when opening from gm81 files</li>
+	<li>0001059: Depth issues in draw event </li>
+	<li>0001019: Error when Opening GM via File Association </li>
+	<li>0001054: Room editor opens on settings</li>
+	<li>0001070: NSIS error </li>
+	<li>0001080: Error loading from associated file </li>
+	<li>0000757: Update IssueScript end when using sprite_add_sprite </li>
+	<li>0001107: Update IssueFramerate locked at 60fps (GM 8.1.91) </li>
+	<li>0001009: Win7SP1 Maker elements render incorrectly </li>
+	<li>0000955: Code snippets doesn't work with F2 </li>
+	<li>0000935: error "failed to replace icon." </li>
+	<li>0001093: Game Maker 8.1 updater crash </li>
+	<li>0000960: Improved Script Autocomplete </li>
+	<li>0000821: object_set_solid doesn't work.</li>
+	<li>0000676: Code autofill in code editor takes too long to disappear</li>
+	<li>0001274: Function draw_set_blend_mode_ext does'n work correct on laptops </li>
+	<li>0000805: Code completion lags, often causing duplicated phrases to be entered </li>
+	<li>0000724: Update IssueNo error window when calling script with incorrect amount of arguments from within a script </li>
+	<li>0000826: "Unexpected error occured when running the game" </li>
+	<li>0000803: Gm 8.1 compiles projects much longer than gm8.0 ("Not Responding") </li>
+	<li>0000802: Game maker 8.1 crashing on startup with some gm8.0 projects </li>
+	<li>0000975: Tiles stretch </li>
+	<li>0001049: "unexpected error occurred when running the game" </li>
+	<li>0000901: "Unexpected Error" on executables (with large bgs)</li>
+	<li>0000829: Ambient Light Ignores Vertex Color</li>
+</ul>
+
+
+
+<h1 id="version-8.1.91">Version 8.1.91 (stable)</h1>
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>0001035: Can not access fonts</li>
+	<li>0001023: Can't select a font</li>
+	<li>0001012: Cannot select Windows font for resource</li>
+	<li>0001033: texture_set_repeat() does not work</li>
+	<li>0001034: The help still says surfaces don't work in 3D</li>
+	<li>0000976: Surface's seem to disappear after pressing ctrl+alt+del in Windows 7, results in game crash</li>
+</ul>
+
+<ul><u><b><font size="5">Addressed issue</font></b></u>
+	<li>0001025: Cannot draw models created by d3d_model_vertex(etc)</li>
+	<li>0001027: movement</li>
+	<li>0001036: Still have call d3d_end() when drawing to a surface in 3D</li></li>
+</ul>
+
+
+
+<h1 id="version-8.1.90">Version 8.1.90 (no longer available)</h1>
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>0001006: Sprites are cleared when playing game in a computer without Game Maker installed</li>
+	<li>0001011: New exe freezes on Windows 7 and XP</li>
+	<li>0001007: ProcessStartGameMakerUpdater No Key </li>
+</ul>
+
+<ul><u><b><font size="5">Addressed issue</font></b></u>
+	<li>0001010: 3d lighting disabled when using display_reset</li>
+	<li>0001008: display_reset(...) is incompatible with surfaces</li>
+	<li>0001005: Newlines (#) don't work anymore (again!)</li></li>
+</ul>
+
+<h1 id="version-8.1.89">Version 8.1.89</h1>
+
+internal test version.
+
+<h1 id="version-8.1.88">Version 8.1.88 (no longer available)</h1>
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>0001004: (8.1.87) d3d_model_destroy is broken </li>
+	<li>0000998: Sufaces not working </li>
+</ul>
+
+
+<h1 id="version-8.1.87">Version 8.1.87 (no longer available)</h1>
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>0000995: Sprite text font ignores carriage return.</li>
+	<li>Fixed a bug in font height for fonts created at runtime.</li>
+	<li>3D models are now destroyed correctly, freeing all resources.</li>
+	<li>0000994: Surfaces don't work anymore. Please note: Many OLD cards require POW2 surfaces for use in 3D, or the surface will appear incorrectly. A note has also been added to the documentation about these limits.</li>
+	<li>Fixed file associations so they point to the new install locations. If you have issues, you'll need to re-install the program as these are setup during installation.</li>
+</ul>
+
+<h1 id="version-8.1.78">Version 8.1.78 - 86</h1>
+
+internal test
+
+<h1 id="version-8.1.77">Version 8.1.77 (no longer available)</h1>
+
+<ul><u><b><font size="5">Changes</font></b></u>
+	<li>Faster 3D static models using <b>d3d_model_create()</b>.</li>
+	<li>Full screen Anti-Aliasing (0,2,4 and 8 levels) using <b>display_reset(aa)</b> and <b>display_aa</b>.</li>
+	<li>Surfaces now work in full 3D</li>
+	<li>GameMaker will now not install to program files, meaning you no longer have to be an Admin. Now defaults to user directory.</li>
+	<li>Your email address is now no longer required for licensing.</li>
+	<li>New welcome screen for Lite, making it easier to upgrade.</li>
+	<li><b>BOLD</b> for script keywords has been added back in as an option.</li>
+</ul>
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>0000850: Revert back to lite after update</li>
+	<li>0000833: GM8.1.69 continues to revert to lite on startup</li>
+	<li>0000900: Renaming Object</li>
+	<li>0000838: draw_text_ext_color() bug</li>
+	<li>0000970: Normals don't scale properly with d3d_transform_add_scaling</li>
+	<li>0000846: Updater cases infinite loop of "save project" when relauching</li>
+	<li>0000848: When New Update Available, the chosen file does not load</li>
+	<li>0000847: License lost on every launch</li>
+	<li>0000869: GM 'Unable to Validate Licence' and When Entering Licence Key I get 'I/O error 1784'</li>
+	<li>0000902: file_text_write_real does not work with negative decimals.</li>
+	<li>0000762: File reading reals problem</li>
+	<li>0000959: Serious problem saving strings in a ds_list to file in GM8.1 that was not present in GM8.0</li>
+	<li>0000841: 'save as' generates invalid default filename</li>
+	<li>0000851: Game Information is NOT word wrapping</li>
+	<li>0000873: gamemaker_version returns 800 for Game Maker 8.1 and above</li>
+	<li>0000870: problems with functions message_text_font and message_button_font</li>
+	<li>0000904: Data structure read functions do not work</li>
+	<li>0000860: Make the auto updater view not "always on top"</li>
+	<li>0000864: Topmost updater window</li>
+	<li>0000978: Manual has outdated code in the index</li>
+	<li>0000796: Documentation page on Fonts has not been updated</li>
+	<li>0000794: Error in Documentation on Upgrading</li>
+	<li>0000807: Zoom In/Out/Reset are missing toolips in Room editor</li>
+	<li>0000893: Nearly unnoticeable typo in "Global Game Settings"</li>
+	<li>0000811: 3D lights index incorrectly or some other cause</li>
+	<li>0000898: gamemaker_version is 800</li>
+	<li>0000872: renaming a resource clashes with finding a resource</li>
+	<li>0000884: renaming sprite error</li>
+	<li>0000905: GM Says 15 Arguments Required Where 16 are Required</li>
+	<li>0000882: Mistake in helpfile</li>
+	<li>0000779: Object placement in room is off by a large amount when zoomed in.</li>
+	<li>0000858: bold fonts in script editor</li>
+	<li>0000738: Problem with "Snap to Grid" and isometric grids</li>
+	<li>0000799: # does not create a new line anymore</li>
+	<li>0000726: Create Group</li>
+	<li>0000732: Renaming resources sometimes doesn't work and still reads "Rename Ctrl+R"</li>
+	<li>0000754: New room editor renders semi-transparent backgrounds opaque</li>
+	<li>0000914: Background transparency showing up as black in rooms.</li>
+	<li>0000885: Backgrounds are not transparent in Room Editor</li>
+	<li>0000765: Multiple backgrounds glitch</li>
+	<li>0000834: ambient light: colours are off</li>
+	<li>0000963: Hotkey for "Search in Scripts"</li>
+	<li>0000964: When panning the room the view position does not stay at the correct co ordinates but moves along.</li>
+	<li>Vertical font alignment fixed on reduced character sets</li>
+</ul>
+
+
+<ul><u><b><font size="5">Addressed issue</font></b></u>
+	<li>0000790: Anyone can create watermark-free exes with gm8.1 Lite</li>
+	<li>0000876: Error "trying to access argument[n]" does not give object/event/action/line/position information</li>
+	<li>0000883: Scrollbar Mirroring Room Edtor</li>
+	<li>0000888: test/norton</li>
+	<li>0000897: Error in mod with large numbers</li>
+	<li>0000910: We need better/more advanced sound capabilities.</li>
+	<li>0000911: New game_save cannot be loaded after switching from 8 to 8.1.</li>
+	<li>0000947: Showing expression in "If an expression is true"</li>
+	<li>0000965: New resource type - layers</li>
+	<li>0000651: Interpolation between pixels don't work under Windows 7</li>
+	<li>0000895: Hints in Object Properties don't dissapears</li>
+	<li>0000653: Resource tree folder names stay white after minimize</li>
+</ul>
+
+
+<h1 id="version-8.1.72">Version 8.1.72-76</h1>
+
+internal test versions.
+
+
+<h1 id="version-8.1.71">Version 8.1.71 (no longer available)</h1>
+
+We believe we've also fixed the license key stuff, but won't mark them as fixed until we know for sure.<br>
+
+NOTE: PLEASE INSTALL FROM THE INSTALLER TO FIX FILE ASSOCIATION PROBLEMS.
+
+
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>0000832: Help file mistake.</li>
+	<li>0000835: GameMaker Help Mistake</li>
+	<li>0000839: Default tab in Game Settings should be Graphics</li>
+	<li>0000723: Isometric grid not properly zooming</li>
+	<li>0000853: Some fonts do not work</li>
+</ul>
+
+<ul><u><b><font size="5">Addressed issue</font></b></u>
+	<li>0000840: Ctrl+A won't work in Font Properties</li>
+</ul>
+
+<h1 id="version-8.1.70">Version 8.1.70</h1>
+
+internal test version
+
+<h1 id="version-8.1.69">Version 8.1.69 (no longer available)</h1>
+
+<ul><u><b><font size="5">Added</font></b></u>
+	<li>We have added proper scheduling to Vista and Windows 7 via <a href="/web/20160814092311/http://msdn.microsoft.com/en-us/library/aa969511%28v=vs.85%29.aspx">DwmEnableMMCSS()</a> which should help framerates. </li>
+	<li>We have added int Anti-Aliasing control to fonts, which allow you to select how much to apply - including OFF!
+		<ul><li>NOTE: This is not currently visible in the preview window.</li></ul>
+	</li>
+	<li>Links have now been added into the windows menu and in GameMaker itself on the HELP menu, which allows easy access to GameMaker's folders (for libs, tutorials, etc.)</li>
+</ul>
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>0000744: Invisible Font</li>
+	<li>0000750: Bitmap fonts cause issues in created games.</li>
+	<li>0000781: Bitmap fonts are invisible in GM8.1</li>
+	<li>0000763: Scripts arguments</li>
+	<li>0000752: Right-click > Delete All in room editor really, REALLY doesn't work correctly. No, really.</li>
+	<li>0000735: argument_count is not recognised in the script/code editor</li>
+	<li>0000780: argument_count is not included in the fnames file</li>
+	<li>0000776: Execute script using the action: Script requires 0 arguments, 5 have been supplied.</li>
+	<li>0000772: Placing tiles while zooming</li>
+	<li>0000761: Tiles are aligning way to far off to left when placed</li>
+	<li>0000747: Using uppercase letters in email address causes licensing to fail</li>
+	<li>0000736: Show Object information when no objects</li>
+	<li>0000743: Installer suggests incorrect installation folder name</li>
+	<li>0000767: Object information of larger objects is incomplete</li>
+	<li>0000800: When I open a gm8.0 file, it opens a new game, not the game I wanted to open.</li>
+	<li>0000792: gm8.1 reverts to lite when not connected to internet</li>
+	<li>0000771: GM Updater Issues</li>
+	<li>0000787: when offline</li>
+	<li>0000822: keeps reverting to lite</li>
+	<li>0000806: Ctrl + 0 to reset Zoom</li>
+	<li>0000797: Blocked actions in Lite Edition have a Pro indication</li>
+	<li>0000807: Zoom In/Out/Reset are missing toolips in Room editor</li>
+	<li>0000773: Zoom issues with tilesets</li>
+	<li>0000795: Errors in documentation page on Creating Rooms</li>
+	<li>0000791: Displacement in tile interaction when zooming in and out in room editor</li>
+	<li>0000798: You can move the cursor inside the code-line rectangle</li>
+	<li>0000759: Help File product naming incorrect or inconsistent.</li>
+	<li>0000755: Script editor: bold fonts are incorrectly aligned/spaced, making code harder to read in editor.</li>
+	<li>0000819: Game Maker 8.1 wont run off line correctly</li>
+	<li>0000816: Fonts do not work</li>
+	<li>0000824: Some mplay functions only return the first character of a string</li>
+	<li>0000818: Whenever Game Maker 8.1 is started, it immediately crashes.</li>
+	<li>0000775: Debug messages window is not updated when not in focus</li>
+</ul>
+
+
+<ul><u><b><font size="5">Addressed issue</font></b></u>
+	<li>0000737: Right clicking in the script/code editor does not move the text cursor to the mouse's position</li>
+	<li>0000746: Search in Scripts: clicking one of the search results doesn't always open the relevant section</li>
+	<li>0000729: Right-click on instance > delete all = don't work</li>
+	<li>0000749: Room editing: panning doesn't allow me to pan beyond left and top of room</li>
+	<li>0000793: upgrade from 8 to 8.1</li>
+	<li>0000789: GM8.1 runtime error with gm8.0 files</li>
+	<li>0000817: Web site issues (link hard to find)</li>
+	<li>0000815: Option to delay Instance Creation scripts until after the Create event fires</li>
+	<li>0000804: Game Maker UI isn't compatible with HighDPI (for Windows Vista +)</li>
+	<li>0000742: Cannot minimize GM</li>
+	<li>0000778: Room zoom glitches when you use scrollbar</li>
+	<li>0000831: Built-in Easers</li>
+	<li>0000783: Scroll Bars Flickering when zoom level changes</li>
+	<li>0000733: Flicker of window controls</li>
+	<li>0000810: Strange type error in game maker 8.1</li>
+	<li>0000812: Setting depth often results in a negative number</li>
+	<li>0000823: Loading freezes when preparing sounds for about 10 seconds</li>
+	<li>0000825: Language settings</li>
+	<li>0000813: Right click like 8.0</li>
+	<li>0000758: Room Editor Scroll Bars Glitching</li>
+	<li>0000809: PNG8 (256bit RGB+A)</li>
+	<li>0000808: Check for Updates and optional update setting in Preferences</li>
+	<li>0000742: Cannot minimize GM</li>
+	<li>0000827: Not recognizing an instance of an object with instance_exists or instance_nearest</li>
+	<li>0000745: "Check all scripts" does not check code action scripts and action parameters</li>
+	<li>0000727: Room Scrollbar Issue</li>
+	<li>0000645: Scroll bars in room editor flash when hovered over</li>
+</ul>
+
+
+
+<h1 id="version-8.1.66">Version 8.1.66-8.1.68</h1>
+
+Internal test versions.
+
+<h1 id="version-8.1.65">Version 8.1.65 (Final) (no longer available)</h1>
+
+<ul><u><b><font size="5">Addressed issue</font></b></u>
+	<li>0000718: string_char_at(str,0) returns same as string_char_at(str,1)</li>
+	<li>0000714: Re-installation Failure</li>
+	<li>0000703: LIBs don't work...</li>
+</ul>
+
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>0000720: Shift+Tab in Code editor works only when text is selected</li>
+	<li>0000719: On fullscreen watermakr becames very wide.</li>
+	<li>0000717: Middle mouse button panning jumps in Win7 dual monitor setup</li>
+</ul>
+
+
+<h1 id="version-8.1.60">Version 8.1.60-8.1.64</h1>
+
+internal test version.
+
+<h1 id="version-8.1.59">Version 8.1.59  (RC1)</h1>
+
+<ul><u><b><font size="5">New rules applied to argument passing</font></b></u>
+	<li>if you use <b>argument0</b> to <b>argument15</b>, then you MUST supply up to that number in the argument list. So if you use <b>argument2</b>, you must supply 3 arguments - <i>exactly</i>.</li>
+	<li>If you use the argument array (<b>argument[x]</b>) then you are free to supply as many or as few arguments as you wish.</li>
+	<li>If you use both <b>argumentX</b> and <b>argument[x]</b>, then you MUST supply up to <b>argumentX</b>, but are free to supply more if you wish. So if you use <b>argument1</b> and <b>argument[x]</b>, then you must supply at LEAST 2 arguments, but can then use any optional ones that have been passed in.</li>
+	<li><b>argument_count</b> now holds the number of arguments passed. (0 is for no arguments passed)</li>
+	<li>accessing <b>argument[argument_count]</b> or higher, will now result in a runtime error.</li>
+</ul>
+
+<h1 id="version-8.1.58">Version 8.1.58</h1>
+
+internal testing.
+
+
+<h1 id="version-8.1.57">Version 8.1.57</h1>
+
+<ul><u><b><font size="5"></font></b></u>
+	<li>Brand new FONT dialog where you can now specify CHARSET to use.</li>
+	<li>New command <b>message_text_charset(type, charset)</b> added to aid multi-language support</li>
+</ul>
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>0000707: New functions aren't listed in help index in GM 8.1.53</li>
+	<li>Fixed an issue with the updater crashing on startup.</li>
+</ul>
+
+
+<h1 id="version-8.1.54">Version 8.1.54 - Version 8.1.56</h1>
+
+Internal build.
+
+
+<h1 id="version-8.1.53">Version 8.1.53</h1>
+
+You will have to re-enter the BETA license key after upgrading to this version.
+
+<ul><u><b><font size="5"></font></b></u>
+	<li>LITE edition can now use draw_sprite_ext() and draw_self(), although the blend colour <i>must</i> be c_white.</li>
+	<li>LITE edition can now use and change image_angle.</li>
+	<li>Addressed issue 0000688: Hitting enter after tab will ignore the created indent on the next line</li>
+	<li>Addressed issue 0000687: Cannot open a .gm81 or .gmk by dragging it into Game Maker</li>
+</ul>
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>0000680: TV logo positions wrong.</li>
+	<li>0000648: Accented characters not working in draw_text and show_message  <i>(attempt 2)</i></li>
+	<li>0000652: Help file is out of date</li>
+	<li>0000689: Search in Scripts function too vague</li>
+	<li>0000679: Large Size of Trace File</li>
+	<li>0000684: non-animated gif always have one subimage when added by sprite_add()</li>
+</ul>
+
+<h1 id="version-8.1.52">Version 8.1.52</h1>
+
+Internal build.
+
+
+<h1 id="version-8.1.51">Version 8.1.51</h1>
+
+Beta version time extension.
+
+
+<h1 id="version-8.1.50">Version 8.1.50</h1>
+
+<font size="6"><b>NOTE</b>: UPDATE will not work with this version. You <b>MUST</b> use the installer!!</font><br>
+(see email for link)
+<ul><u><b><font size="5"></font></b></u>
+	<li>Updater now only requires .NET 2.0 this should be standard on most versions of windows.</li>
+	<li><b>.EXE</b> creation and Publishing your gameadded back into LITE.</li>
+	<li>ZOOM added into room editor in LITE.</li>
+	<li>New GameMaker "TV logo" added to LITE .exes</li>
+	<li>New option in prefrences to place the GameMaker "TV logo"</li>
+	<li>LITE .EXEs now have a nag screen on exit (placeholder).</li>
+</ul>
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>0000648: Accented characters not working in draw_text and show_message.</li>
+	<li>0000666: Mysterious Form1 appears along with updater</li>
+	<li>0000659: Change position when instance is locked in room editor</li>
+	<li>0000657: Loading a transparent .png image will mess around with the transparent colours</li>
+	<li>0000675: Pinned GM opens as another icon on taskbar</li>
+	<li>0000677: Minimize updater</li>
+	<li>0000671: display_mouse_set() does not function correctly</li>
+</ul>
+
+<h1 id="version-8.1.42">Version 8.1.42 - Version 8.1.49</h1>
+
+Internal Test versions.
+
+
+<h1 id="version-8.1.41">Version 8.1.41</h1>
+
+<ul><u><b><font size="5"></font></b></u>
+	<li>You will need to re-enter your license key after this update. Same details as before.</li>
+	<li>Addressed item <b>0000649: There is a discrepancy in fonts displayed between 8.0 and 8.1</b>. Not a bug, font's are just different in 8.1</li>
+	<li>Addressed item <b>0000658: Fill room with background when no background color selected.</b> Default room colour is an <i>Editor Only</i> setting.</li>
+</ul>
+
+
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>0000655: Fonts shown on 0.5 offset are cropped.</li>
+	<li>0000650: Ctrl+R renames resources instead of searching them.</li>
+	<li>0000644: Text don't fit on update window.</li>
+	<li>0000661: "Default tab" don't work for timelines</li>
+	<li>0000662: Default room background color don't work for paths.</li>
+	<li>0000647: GIF don't loads when using sprite_add</li>
+	<li>0000634: "RichEdit line insertion error"</li>
+	<li>0000654: Dual core peaks 50% all the time</li>
+	<li>0000664: Updater High CPU usage</li>
+	<li>0000646: C++ strlen() / Delphi StrLen() returns 1 from string passed into DLL</li>
+</ul>
+
+
+<h1 id="version-8.1.40">Version 8.1.40</h1>
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>Importing images into the image editor no longer gets a little <i>white</i> halo applied sometimes.</li>
+	<li>If you created an image but didn't add one, the game would fail to load.</li>
+	<li>0000635: Extension package that worked in GM8.0 does not work in 8.1</li>
+	<li>0000636: Failed to locate extension data file: GM Room Transitions data</li>
+	<li>0000633: "Delete Underlying" not functional in 8.1</li>
+</ul>
+
+<h1 id="version-8.1.39">Version 8.1.39</h1>
+<ul>
+	<li>Auto update test.</li>
+</ul>
+
+
+
+<h1 id="version-8.1.38">Version 8.1.38</h1>
+
+<ul>
+	<li>Changed room editor RIGHT mouse click priorities. Menu for normal, CTRL+RMB for delete</li>
+	<li>Room ZOOM mode added</li>
+	<li>Mouse Wheel ZOOMS in room editor</li>
+	<li>Middle mouse button PANS around the room.</li>
+	<li>Transparent Background Settings dialog moved to main form.</li>
+	<li>Transparent Background grid size now a global setting.</li>
+	<li>Transparent Background grid added to room editor.</li>
+	<li>Transparent Background grid can now have user colours.</li>
+	<li>Image Editor now uses the mouse wheel to zoom.</li>
+	<li>Image Editor now uses the middle mouse button to "pan"</li>
+	<li>Can now PAN around inside the PATH editor using the middle mouse button.</li>
+	<li>You can now change the default background colour for rooms (when no ROOM background has been set)</li>
+	<li>You can now disable background room filling, so you can see the background GRID when no ROOM colour has been set.</li>
+	<li>Added +/-/= zoom buttons to Room toolbar</li>
+	<li>You can now RIGHT CLICK an object and EDIT it from within the Room Editor.</li>
+	<li>Rendering inside the Code Editor sped up.</li>
+	<li>inside the code editor, you can now mark a block of text and use TAB and SHIFT-TAB to tab it in and out.</li>
+	<li>News window now resizable.</li>
+	<li>Room settings now remembers "maximised" setting.</li>
+	<li>Shiney new ABOUT box.</li>
+	<li>Resource renaming changed back to windows default; F2 (was changed from F2 to CTRL-R in GM 8.0)</li>
+	<li>Code window now has a "toggle" icon for Code Completion on/off</li>
+	<li>You can now press ESCAPE inside the code editor to get rid of the code completion box.</li>
+	<li>Game Maker now saves .gm81 files (instead of .gmk)</li>
+	<li>New .EXE encryption</li>
+	<li>New News feed system added</li>
+	<li><b>draw_self()</b> added</li>
+	<li><b>os_type</b> or <b>YoYo_GetPlatform()</b> now returns you the operating system your running on (win, mac, ios etc.)</li>
+	<li><b>os-device</b> or <b>YoYo_GetDevice()</b> now returns you a device type (iPhone, iPhone4, iPad etc.)</li>
+	<li>New constants added:</li>
+	<ul>
+		<li><b>os_win32</b>, </li>
+		<li><b>os_win64</b>,</li>
+		<li><b>os_macosx</b>,</li>
+		<li><b>os_psp</b>,</li>
+		<li><b>os_ios</b>,</li>
+		<li><b>os_android</b>, </li>
+		<li><b>device_ios_iphone</b>, </li>
+		<li><b>device_ios_iphone_retina</b>, </li>
+		<li><b>device_ios_ipad</b></li>
+	</ul>
+	<li>ZBuffer is now 24Bit</li>
+	<li>Hardware T&L for Faster 2D and 3D rendering.</li>
+	<li>You can now change the background colours of the code editor, including the current line and selection.</li>
+	<li>"Delete underlying objects" Now off by default in the room editor.</li>
+	<li>You can now use &ltAltGr&gt (right alt) in the code editor to insert accented characters.</li>
+	<li><b>d3d_light_define_ambient( colour )</b> added for a global ambient</li>
+	<li>You can now set the default TAB on the object panel (so you can default to the code panel for example)</li>
+	<li>In Standard Edition, script searching will now search ALL scripts, including objects, rooms, creation events, timelines and triggers.</li>
+	<li>added <b>dot_product(x1,y1, x2,y2)</b></li>
+	<li>added <b>dot_product_3d(x1,y1,z1, x2,y2,z2)</b></li>
+	<li>added <b>point_distance_3d(x1,y1,z1, x2,y2,z2)</b></li>
+	<li>Font creation totally rewritten. Now produces much nicer anti-aliased fonts, and doesn't <i>cut</i> them off.</li>
+	<li>You can now change the "Execute a piece of code" in D&D action list, by using the 1st line of your script and a "///" style comment at the start. </li>
+</ul>
+
+<p>
+<ul><u><b><font size="5">Fixed bugs</font></b></u>
+	<li>Undo in Text Editor.<br>
+		when you undo a change and then save the script or run the game, the change is not saved.</li>
+	<li>Error in reading reals from text files<br>
+		when you read two numbers from a single line in a text file and the first one is 0, the numbers are not read correctly.</li>
+	<li>0000536. mp_grid_add_cell is bugged. Also fixed same issue in mp_grid_clear_cell is bugged </li>
+	<li>0000597. Overly large images were not being clamped correctly and were causing corruption.</li>
+	<li>0000589: tile_layer_find() doesn't account for scaling.  (also in tile_layer_delete_at(), tile_find(),  tile_delete_at() )</li>
+	<li>0000255: Replacing code at the start of the line. cursor column was going negative.</li>
+	<li>0000580 - If you use sprite_create_from_surface on a blank surface the sprite will be completely opaque.</li>
+	<li>sprite_create_from_surface: if you set paramater "removeback"  to 2, it will now copy the alpha "as is".</li>
+</ul>
+
+</p>
+
+
+<ul>
+
+</ul>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 9:23:11 sie 14, 2016 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 12:46:31 kwi 13, 2017.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
