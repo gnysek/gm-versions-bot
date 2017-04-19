@@ -22,7 +22,9 @@
 	<a href="<?php echo URL; ?>release/<?php echo $name; ?>"><?php echo $data['name']; ?></a>
 </h4>
 <p><?php echo get_version($name, $resultFile, false); ?></p>
-<a class="btn btn-success btn-small" href="<?php echo URL; ?>release/<?php echo $name; ?>">Release notes</a>
+<a class="btn btn-primary btn-small" href="<?php echo URL; ?>release/<?php echo $name; ?>">Release notes</a>
+<hr>
+<a href="https://help.yoyogames.com/hc/en-us/articles/231719448-RoadMap" target="_blank" class="btn btn-success btn-small">See roadmap for GameMaker Studio 2</a>
 
 <div style="clear: both;"></div>
 <h2 style="color: #039d5b;">Older versions</h2>
