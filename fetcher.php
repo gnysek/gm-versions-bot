@@ -1,6 +1,8 @@
 <?php
 header("Content-Type: text/plain");
 error_reporting(E_ALL);
+set_time_limit(60);
+ini_set('default_socket_timeout', 5);
 
 include_once('cfg.php');
 include_once('fetcher/gmapi-data.php');
@@ -14,9 +16,9 @@ $rss = array(
 	'gm2idemac'    => '',
 	#'gm2idemac'    => 'http://gms.yoyogames.com/update-win.rss',
 	'gm2runtime'   => 'http://gms.yoyogames.com/Zeus-Runtime.rss',
-	'gmstudio'     => 'http://store.yoyogames.com/downloads/gm-studio/update-studio-stable.rss',
-	'gmstudiobeta' => 'http://store.yoyogames.com/downloads/gm-studio/update-studio.rss',
-	'gmstudioea'   => 'http://store.yoyogames.com/downloads/gm-studio-ea/update-studio.rss',
+	'gmstudio'     => 'https://store.yoyogames.com/downloads/gm-studio/update-studio-stable.rss',
+	'gmstudiobeta' => 'https://store.yoyogames.com/downloads/gm-studio/update-studio.rss',
+	'gmstudioea'   => 'https://store.yoyogames.com/downloads/gm-studio-ea/update-studio-ea.rss',
 	'gm4win'       => '',
 	'gm4mac'       => '',
 	#'gm4win' => 'http://store.yoyogames.com/downloads/gm4win/update.rss',
@@ -29,6 +31,11 @@ $final = array();
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+curl_setopt($ch, CURLOPT_MAXREDIRS, 10);
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 
 $errors = false;
 
@@ -70,6 +77,9 @@ foreach ($rss as $name => $url) {
 		}
 	} else {
 		echo 'Can\'t read ' . $name . ' RSS' . PHP_EOL;
+		foreach (libxml_get_errors() as $error) {
+			echo "\t(", $error->message . ')' . PHP_EOL;
+		}
 	}
 }
 
