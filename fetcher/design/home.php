@@ -15,7 +15,7 @@
 <p><strong>Windows</strong>: <?php echo get_version($name, $resultFile, false); ?></p>
 <p><strong>OS X</strong>: <?php echo get_version('gm2idemac', $resultFile, false); ?></p>
 <a class="btn btn-info btn-small" href="<?php echo URL; ?>release/<?php echo $name; ?>">Windows: Release notes &amp; Download &raquo;</a>
-<a class="btn btn-primary btn-small" href="<?php echo URL; ?>release/gm2idemac">OS X: Release notes &amp; Download &raquo;</a>
+<a class="btn btn-info btn-small" href="<?php echo URL; ?>release/gm2idemac">OS X: Release notes &amp; Download &raquo;</a>
 
 <?php $name = 'gm2runtime'; $data = $gmapis[$name]; ?>
 <h4>
