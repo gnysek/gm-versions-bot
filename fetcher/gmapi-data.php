@@ -17,7 +17,7 @@ $gmapis = array(
 	),
 	'gm2idemac' => array(
 		'name' => 'GMS 2.x IDE (Mac)',
-		'notes' => 'http://gms.yoyogames.com/ReleaseNotes-I.html',
+		'notes' => 'http://gms.yoyogames.com/ReleaseNotes.html',
 		'rss' => 'http://gms.yoyogames.com/update-mac.rss',
 		'download' => 'http://gms.yoyogames.com/GameMakerStudio2-%s.pkg',
 		'desc' => 'IDE - application in which you can project games using GML or Drag\'n\'drop.',

@@ -14,7 +14,7 @@ include_once('fetcher/gmapi-data.php');
 $rss = array(
 	'gm2ide'       => 'http://gms.yoyogames.com/update-win.rss',
 	'gm2idemac'    => '',
-	#'gm2idemac'    => 'http://gms.yoyogames.com/update-win.rss',
+	'gm2idemac'    => 'http://gms.yoyogames.com/update-mac.rss',
 	'gm2runtime'   => 'http://gms.yoyogames.com/Zeus-Runtime.rss',
 	'gmstudio'     => 'https://store.yoyogames.com/downloads/gm-studio/update-studio-stable.rss',
 	'gmstudiobeta' => 'https://store.yoyogames.com/downloads/gm-studio/update-studio.rss',
