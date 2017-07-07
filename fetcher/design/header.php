@@ -20,6 +20,18 @@
 			margin-bottom: 5px;
 		}
 	</style>
+<?php $class = @get_called_class(); ?>
+<?php if ($class == 'release'): ?>
+<?php global $gmapis; ?>
+<?php global $resultFile; ?>
+<?php if (array_key_exists($version[1], $gmapis) and array_key_exists($version[1], $resultFile)): ?>
+	<meta property="twitter:card" content="summary"/>
+	<meta name="twitter:site" content="@GameMakerUpdate"/>
+	<meta name="twitter:title" content="<?php echo $gmapis[$version[1]]['name']; ?> <?php echo $resultFile[$version[1]]['version']; ?>"/>
+	<meta name="twitter:description" content="View release notes and download <?php echo $resultFile[$version[1]]['version']; ?> update directly."/>
+	<?php if (!empty($gmapis[$version[1]]['image'])): ?><meta name="twitter:image" content="<?php echo URL . 'img/'. $gmapis[$version[1]]['image']; ?>"/><?php endif; ?>
+<?php endif; ?>
+<?php endif; ?>
 </head>
 <body style="padding-top: 50px;">
 
@@ -39,5 +51,4 @@
 	</div>
 </div>
 <div class="container">
-
 <?php include('adsense.php'); ?>

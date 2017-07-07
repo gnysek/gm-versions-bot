@@ -13,6 +13,7 @@ $gmapis = array(
 		'rss' => 'http://gms.yoyogames.com/update-win.rss',
 		'download' => 'http://gms.yoyogames.com/GameMakerStudio-Installer-%s.exe',
 		'desc' => 'IDE - application in which you can project games using GML or Drag\'n\'drop.',
+		'image' => 'gms2.png',
 		'enabled' => true,
 	),
 	'gm2idemac' => array(
@@ -21,6 +22,7 @@ $gmapis = array(
 		'rss' => 'http://gms.yoyogames.com/update-mac.rss',
 		'download' => 'http://gms.yoyogames.com/GameMakerStudio2-%s.pkg',
 		'desc' => 'IDE - application in which you can project games using GML or Drag\'n\'drop.',
+		'image' => 'gms2.png',
 		'enabled' => true,
 	),
 	'gm2runtime' => array(
@@ -28,6 +30,7 @@ $gmapis = array(
 		'notes' => 'http://gms.yoyogames.com/release-notes-runtime.html',
 		'rss' => 'http://gms.yoyogames.com/Zeus-Runtime.rss',
 		'desc' => 'Runtime - a tool used by IDE to compile a game. May be released independently to only fix bugs in compiled games.',
+		'image' => 'gms2.png',
 		'enabled' => true,
 	),
 	'gmstudio' => array(
@@ -35,6 +38,7 @@ $gmapis = array(
 		'notes' => 'http://store.yoyogames.com/downloads/gm-studio/release-notes-studio.html',
 		'rss' => 'http://store.yoyogames.com/downloads/gm-studio/update-studio-stable.rss',
 		'download' => 'http://store.yoyogames.com/downloads/gm-studio/GMStudio-Installer-%s.exe',
+		'image' => 'gms1.png',
 		'enabled' => true,
 	),
 	'gmstudiobeta' => array(
@@ -42,6 +46,7 @@ $gmapis = array(
 		'notes' => 'http://store.yoyogames.com/downloads/gm-studio/release-notes-studio.html',
 		'rss' => 'http://store.yoyogames.com/downloads/gm-studio/update-studio.rss',
 		'download' => 'http://store.yoyogames.com/downloads/gm-studio/GMStudio-Installer-%s.exe',
+		'image' => 'gms1.png',
 		'enabled' => true,
 	),
 	'gmstudioea' => array(
@@ -49,6 +54,7 @@ $gmapis = array(
 		'notes' => 'http://store.yoyogames.com/downloads/gm-studio-ea/release-notes-studio.html',
 		'rss' => 'http://store.yoyogames.com/downloads/gm-studio-ea/update-studio.rss',
 		'download' => 'http://store.yoyogames.com/downloads/gm-studio-ea/GMStudio-Installer-%s.exe',
+		'image' => 'gms1.png',
 		'enabled' => true,
 	),
 	'gm4win' => array(
