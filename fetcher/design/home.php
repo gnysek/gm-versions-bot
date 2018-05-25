@@ -12,17 +12,15 @@
 <h4>
 	<a href="<?php echo URL; ?>release/<?php echo $name; ?>">GameMaker Studio 2 IDE</a>
 </h4>
-<p><strong>Windows</strong>: <?php echo get_version($name, $resultFile, false); ?></p>
-<p><strong>OS X</strong>: <?php echo get_version('gm2idemac', $resultFile, false); ?></p>
-<a class="btn btn-info btn-small" href="<?php echo URL; ?>release/<?php echo $name; ?>">Windows: Release notes &amp; Download &raquo;</a>
-<a class="btn btn-info btn-small" href="<?php echo URL; ?>release/gm2idemac">OS X: Release notes &amp; Download &raquo;</a>
+<p><strong>Windows & OS X</strong>: <?php echo get_version($name, $resultFile, false); ?></p>
+<a class="btn btn-primary btn-small" href="<?php echo URL; ?>release/<?php echo $name; ?>">Check Release notes or get download link for GMS2 IDE &raquo;</a>
 
 <?php $name = 'gm2runtime'; $data = $gmapis[$name]; ?>
 <h4>
-	<a href="<?php echo URL; ?>release/<?php echo $name; ?>"><?php echo $data['name']; ?></a>
+	<a href="<?php echo URL; ?>release/<?php echo $name; ?>"><?php echo $data['name']; ?></a> (downloads from IDE only)
 </h4>
 <p><?php echo get_version($name, $resultFile, false); ?></p>
-<a class="btn btn-primary btn-small" href="<?php echo URL; ?>release/<?php echo $name; ?>">Release notes</a>
+<a class="btn btn-primary btn-small" href="<?php echo URL; ?>release/<?php echo $name; ?>">Check release notes for GMS2 runtime</a>
 <hr>
 <a href="https://help.yoyogames.com/hc/en-us/articles/231719448-RoadMap" target="_blank" class="btn btn-success btn-small">See roadmap for GameMaker Studio 2</a>
 
@@ -30,7 +28,7 @@
 <h2 style="color: #039d5b;">Older versions</h2>
 
 <?php foreach ($gmapis as $name => $data): ?>
-	<?php if (in_array($name, array('gm2ide', 'gm2runtime', 'gm2idemac'))) continue; ?>
+	<?php if (in_array($name, array('gm2ide', 'gm2runtime'))) continue; ?>
 	<div class="row">
 		<div class="span4">
 			<h4 style="margin: 0px;"><a href="<?php echo URL; ?>release/<?php echo $name; ?>"><?php echo $data['name']; ?></a></h4>

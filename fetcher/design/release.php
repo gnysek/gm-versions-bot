@@ -11,7 +11,7 @@
 	</span>
 
 	<small><strong>GameMaker Studio 2</strong></small><br>
-	<?php foreach (array('gm2ide', 'gm2idemac', 'gm2runtime') as $name): ?>
+	<?php foreach (array('gm2ide', 'gm2runtime') as $name): ?>
 		<a class="btn btn-small" href="<?php echo URL; ?>release/<?php echo $name; ?>"><?php echo $gmapis[$name]['name']; ?></a>
 	<?php endforeach; ?><br>
 	<small><strong>GameMaker Studio 1.x</strong></small><br>
@@ -40,9 +40,15 @@
 				Release notes
 				<a class="btn btn-small" href="<?php echo $gmapis[$version[1]]['notes']; ?>" target="_blank">Open Release Notes
 					for <?php echo $resultFile[$version[1]]['version']; ?> directly on YYG website &raquo;</a>
+
+                <?php if ($version[1] == 'gm2runtime'): ?>
+                    <small>also, <a href="<?php echo URL; ?>release/gm2runtime" target="_blank">check Release Notes
+                        for <strong>GMS2 Runtime</strong> <?php echo $resultFile['gm2runtime']['version']; ?> &raquo;</a></small>
+                <?php endif; ?>
+
 			</h4>
 			<iframe src="<?php echo $gmapis[$version[1]]['notes']; ?>" frameborder="0"
-					style="width: 100%; height: 600px; background: white;"></iframe>
+					style="width: 100%; height: 1800px; background: white;"></iframe>
 		<?php else: ?>
 		<div style="line-height: 40px;">
 			<p>No release notes for this product.</p>

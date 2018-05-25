@@ -142,7 +142,7 @@ if (!$errors) {
 			if (!empty($CFG)) {
 				$twitter = new Twitter($CFG['consumerKey'], $CFG['consumerSecret'], $CFG['accessToken'], $CFG['accessTokenSecret']);
 				try {
-					$twitter->send($names[$name] . ' v. ' . $final[$name]['version'] . ' is out! ' . $releaseNotes[$name] . ' #yoyogames');
+					$twitter->send($names[$name] . ' v. ' . $final[$name]['version'] . " is out! \nCheck release notes & download on " . $releaseNotes[$name] . ' #yoyogames #GameMakerStudio2');
 				} catch (Exception $e) {
 					echo $e->getMessage() . PHP_EOL;
 					file_put_contents('log.txt', $e->getMessage() . PHP_EOL);

@@ -1,4 +1,4 @@
-<div class="alert alert-info text-center"><small>This website uses 3rd party cookies from ad provider. If you don't want them, you can turn off 3rd party cookies or all cookies in your browser settings.</small></div>
+<div class="alert alert-info text-center"><small>This website uses 3rd party cookies from ad provider. If you don't want them, you can turn off cookies in your browser settings. | <a href="https://fableinside.com/polityka-prywatnosci.html" target="_blank">Privacy policy</a></small></div>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- RWD-1 -->
 <ins class="adsbygoogle"

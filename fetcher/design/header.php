@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>GameMaker products latest versions API</title>
-	<link href="//netdna.bootstrapcdn.com/bootswatch/2.3.0/slate/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<link href="//netdna.bootstrapcdn.com/bootswatch/2.3.0/cyborg/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 	<!--	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>-->
 	<style>
 		hr {
@@ -33,7 +33,7 @@
 <?php endif; ?>
 <?php endif; ?>
 </head>
-<body style="padding-top: 50px;">
+<body style="padding-top: 60px;">
 
 <div class="navbar navbar-fixed-top">
 	<div class="navbar-inner">
