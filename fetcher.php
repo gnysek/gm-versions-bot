@@ -1,4 +1,7 @@
 <?php
+
+chdir(dirname(__FILE__));
+
 header("Content-Type: text/plain");
 error_reporting(E_ALL);
 set_time_limit(60);
@@ -13,8 +16,10 @@ include_once('fetcher/gmapi-data.php');
 
 $rss = array(
 	'gm2ide'       => 'http://gms.yoyogames.com/update-win.rss',
-	'gm2idemac'    => 'http://gms.yoyogames.com/update-mac.rss',
+	#'gm2idemac'    => 'http://gms.yoyogames.com/update-mac.rss',
 	'gm2runtime'   => 'http://gms.yoyogames.com/Zeus-Runtime.rss',
+    'gm2ide-beta'       => 'http://gms.yoyogames.com/update-win-Beta.rss',
+	'gm2runtime-beta'   => 'http://gms.yoyogames.com/Zeus-Runtime-Beta.rss',
 	'gmstudio'     => 'https://store.yoyogames.com/downloads/gm-studio/update-studio-stable.rss',
 	'gmstudiobeta' => 'https://store.yoyogames.com/downloads/gm-studio/update-studio.rss',
 	'gmstudioea'   => 'https://store.yoyogames.com/downloads/gm-studio-ea/update-studio-ea.rss',
@@ -99,25 +104,29 @@ if (!$errors) {
 
 	$twitter = null;
 
-	$names = array(
-		'gm2ide'       => '#GameMakerStudio2 IDE',
-		'gm2runtime'   => '#GameMakerStudio2 Runtime',
-		'gmstudio'     => '#GameMaker #Studio (stable)',
-		'gmstudiobeta' => '#GameMaker #Studio (beta)',
-		'gmstudioea'   => '#GameMaker #Studio (EAP)',
-		'gm4html5'     => 'GameMaker:HTML5',
-		'gm4mac'       => 'GameMaker for Mac',
-		'gm4win'       => 'GameMaker 8.1 Standard',
-	);
-	$releaseNotes = array(
-		'gm2ide'       => 'http://gmapi.gnysek.pl/release/gm2ide',
-		'gm2runtime'   => 'http://gmapi.gnysek.pl/release/gm2ide',
-		'gmstudio'     => 'http://gmapi.gnysek.pl/release/gmstudio',
-		'gmstudiobeta' => 'http://gmapi.gnysek.pl/release/gmstudiobeta',
-		'gmstudioea'   => 'http://gmapi.gnysek.pl/release/gmstudioea',
-		'gm4win'       => '',
-		'gm4mac'       => '',
-	);
+    $names = array(
+        'gm2ide'          => '#GameMakerStudio2 IDE (stable)',
+        'gm2runtime'      => '#GameMakerStudio2 Runtime (stable)',
+        'gm2ide-beta'     => 'GMS2 IDE (beta)',
+        'gm2runtime-beta' => 'GMS2 Runtime (beta)',
+        'gmstudio'        => '#GameMaker #Studio (stable)',
+        'gmstudiobeta'    => '#GameMaker #Studio (beta)',
+        'gmstudioea'      => '#GameMaker #Studio (EAP)',
+        'gm4html5'        => 'GameMaker:HTML5',
+        'gm4mac'          => 'GameMaker for Mac',
+        'gm4win'          => 'GameMaker 8.1 Standard',
+    );
+    $releaseNotes = array(
+        'gm2ide'          => 'https://gmapi.gnysek.pl/release/gm2ide',
+        'gm2runtime'      => 'https://gmapi.gnysek.pl/release/gm2runtime',
+        'gm2ide-beta'     => 'https://gmapi.gnysek.pl/release/gm2ide-beta',
+        'gm2runtime-beta' => 'https://gmapi.gnysek.pl/release/gm2runtime-beta',
+        'gmstudio'        => 'https://gmapi.gnysek.pl/release/gmstudio',
+        'gmstudiobeta'    => 'https://gmapi.gnysek.pl/release/gmstudiobeta',
+        'gmstudioea'      => 'https://gmapi.gnysek.pl/release/gmstudioea',
+        'gm4win'          => '',
+        'gm4mac'          => '',
+    );
 
 	foreach ($old_versions as $name => $old_data) {
 

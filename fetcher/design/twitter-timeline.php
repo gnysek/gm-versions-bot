@@ -1,3 +1,4 @@
+<?php return; ?>
 <div class="pull-right" style="width: 400px; height: 400px;">
 	<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/GameMakerUpdate"
 	   data-widget-id="518034510445678593">Tweety na temat @GameMakerUpdate</a>
